@@ -12,7 +12,8 @@ import java.util.Arrays;
  * @author JunjunYang
  * @date 2019/10/24 8:47
  */
-public class CountingSort {
+public class CountingSort implements IArraySort{
+    @Override
     public int[] sort(int[] sourceArray) {
         int[] array = Arrays.copyOf(sourceArray, sourceArray.length);
         int max = getMaxValue(array);
