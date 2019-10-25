@@ -41,6 +41,11 @@ public class SortTest {
         sort(new BucketSort());
     }
 
+    @Test
+    public void testRadixSort() {
+        sort(new RadixSort());
+    }
+
     public void sort(IArraySort iArraySort) {
         for (int[] array : list) {
             int[] copyArray = Arrays.copyOf(array, array.length);

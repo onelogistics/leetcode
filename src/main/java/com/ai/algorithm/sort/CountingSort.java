@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 基本思想：将输入的值转化为键存储在额外空间里
  * 实现逻辑：分别求出最大值和最小值，然后创建一个length为max-min+1的桶数组，遍历源数组将其数值转化为桶数组下标存储，桶数组的值即为数值出现的次数，然后遍历桶数组，将结果写入源数组。
  * 算法限制：要求输入的值必须是有确定范围的整数
- * Time Complexity:O(N+K)
+ * Time Complexity:O(N+K)，K为桶数组的length
  * Space Complexity:O(K)
  *
  * @author JunjunYang
