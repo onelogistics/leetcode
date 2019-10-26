@@ -45,7 +45,10 @@ public class SortTest {
     public void testRadixSort() {
         sort(new RadixSort());
     }
-
+    @Test
+    public void testBubbleSort() {
+        sort(new BubbleSort());
+    }
     public void sort(IArraySort iArraySort) {
         for (int[] array : list) {
             int[] copyArray = Arrays.copyOf(array, array.length);
