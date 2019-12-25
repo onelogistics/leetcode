@@ -3,9 +3,13 @@ package com.ai.algorithm.greedy;
 import java.util.Arrays;
 import java.util.Stack;
 
+/**
+ * 从一个数组中不改变元素顺序的选出len个元素，使他们顺序排列代表的十进制数最大
+ * eg. [3,1,4,2] len=2 结果为42
+ */
 public class CreateMaxNumber {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new CreateMaxNumber().maxArray(new int[]{1, 2, 3, 4}, 2)));
+        System.out.println(Arrays.toString(new CreateMaxNumber().maxArray(new int[]{3,1,4,2}, 2)));
     }
     private int[] maxArray(int[] nums, int len) {
         Stack<Integer> stack = new Stack<Integer>();
