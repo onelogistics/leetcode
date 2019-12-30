@@ -9,4 +9,7 @@ package com.ai.algorithm.tree;
  * @date 2019/12/30 20:41
  */
 public class FindMaxPathSum {
+    public static void main(String[] args) {
+        BinaryTree root2 = BinaryTree.reConstructor(new int[]{-10, 2, -2, -3, 6, -4, 5}, new int[]{-2, 2, -3, -10, -4, 6, 5});
+    }
 }
