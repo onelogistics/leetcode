@@ -9,12 +9,10 @@ import java.util.Queue;
  */
 public class MirrorBinaryTree {
     public static void main(String[] args) {
-        BinaryTree binaryTree = BinaryTree.reConstructor(new int[]{1, 2, 4, 7, 3, 5, 6, 8}, new int[]{4, 7, 2, 1, 5, 3, 8, 6});
-        BinaryTree mirror = solution(binaryTree);
-        BinaryTree.preOrder(mirror);
-        solution2(binaryTree);
+        TreeNode treeNode = TreeNode.reConstructor(new int[]{1, 2, 4, 7, 3, 5, 6, 8}, new int[]{4, 7, 2, 1, 5, 3, 8, 6});
+        TreeNode mirror = solution(treeNode);
+        solution2(treeNode);
         System.out.println();
-        BinaryTree.preOrder(binaryTree);
     }
 
     /**
@@ -23,12 +21,12 @@ public class MirrorBinaryTree {
      * @param root
      * @return
      */
-    public static BinaryTree solution(BinaryTree root) {
+    public static TreeNode solution(TreeNode root) {
         if (root == null || (root.left == null && root.right == null)) {
             return root;
         }
-        BinaryTree left = solution(root.left);
-        BinaryTree right = solution(root.right);
+        TreeNode left = solution(root.left);
+        TreeNode right = solution(root.right);
         root.left = right;
         root.right = left;
         return root;
@@ -40,22 +38,22 @@ public class MirrorBinaryTree {
      * @param root
      * @return
      */
-    public static void solution2(BinaryTree root) {
+    public static void solution2(TreeNode root) {
         if (root == null) {
             return;
         }
-        Queue<BinaryTree> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            BinaryTree binaryTree = queue.poll();
-            BinaryTree temp = binaryTree.left;
-            binaryTree.left = binaryTree.right;
-            binaryTree.right = temp;
-            if (binaryTree.left != null) {
-                queue.add(binaryTree.left);
+            TreeNode treeNode = queue.poll();
+            TreeNode temp = treeNode.left;
+            treeNode.left = treeNode.right;
+            treeNode.right = temp;
+            if (treeNode.left != null) {
+                queue.add(treeNode.left);
             }
-            if (binaryTree.right != null) {
-                queue.add(binaryTree.right);
+            if (treeNode.right != null) {
+                queue.add(treeNode.right);
             }
         }
     }

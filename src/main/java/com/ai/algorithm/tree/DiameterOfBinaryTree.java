@@ -15,22 +15,22 @@ public class DiameterOfBinaryTree {
     int ans;
 
     public static void main(String[] args) {
-        BinaryTree root1 = BinaryTree.reConstructor(new int[]{2, 3, 5, 4}, new int[]{5, 3, 2, 4});
-        BinaryTree root2 = BinaryTree.reConstructor(new int[]{4,-7,2,3,5,7,6,4,7,9,8}, new int[]{-7,4,7,5,3,6,2,9,7,4,8});
+        TreeNode root1 = TreeNode.reConstructor(new int[]{2, 3, 5, 4}, new int[]{5, 3, 2, 4});
+        TreeNode root2 = TreeNode.reConstructor(new int[]{4,-7,2,3,5,7,6,4,7,9,8}, new int[]{-7,4,7,5,3,6,2,9,7,4,8});
         DiameterOfBinaryTree diameterOfBinaryTree1 =new DiameterOfBinaryTree();
         System.out.println(diameterOfBinaryTree1.diameterOfBinaryTree(root1));
         System.out.println(diameterOfBinaryTree1.diameterOfBinaryTree(root2));
     }
-    public int diameterOfBinaryTree(BinaryTree root) {
+    public int diameterOfBinaryTree(TreeNode root) {
         ans = 0;
         depth(root);
         return ans;
     }
-    public int depth(BinaryTree node) {
+    public int depth(TreeNode node) {
         if (node == null) return 0;
         int L = depth(node.left);
         int R = depth(node.right);
-        //最大距离等于左子树+右子树,之所以要取较大值，是由于最长直径不一定经过root节点，比如示例2
+        //最大距离等于左子树深度+右子树深度,之所以要取较大值，是由于最长直径不一定经过root节点，比如示例2
         ans = Math.max(ans, L+R);
         //返回当前节点的深度=左右子节点中较深的深度+1
         return Math.max(L, R) + 1;
