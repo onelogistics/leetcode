@@ -2,6 +2,7 @@ package com.ai.algorithm.search;
 
 /**
  * todo KMP算法不熟练，需要临时背下来（https://www.zhihu.com/question/21923021）
+ * http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html
  * 实现类似{@link String#indexOf(String)}
  * leetcode 28
  * Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
