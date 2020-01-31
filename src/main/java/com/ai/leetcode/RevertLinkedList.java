@@ -15,6 +15,17 @@ public class RevertLinkedList {
             revert=revert.next;
         }
     }
+    public static ListNode reverse(ListNode head) {
+        ListNode pre=null;
+        ListNode cur=head;
+        while(cur!=null) {
+            ListNode next=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=next;
+        }
+        return pre;
+    }
     public static ListNode reverseBetween(ListNode head, int m, int n) {
         ListNode pre=null;
         ListNode cur=head;
