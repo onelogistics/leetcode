@@ -9,11 +9,40 @@ import com.ai.algorithm.linkedList.ListNode;
 public class RevertLinkedList {
     public static void main(String[] args) {
         ListNode node=ListNode.getListNodes(1,2,3,4,5,6,7);
-        ListNode revert=reverseBetween(node,2,6);
+        ListNode revert=reverseKGroup(node,3);
         while (revert!=null) {
             System.out.print(revert.val+" ");
             revert=revert.next;
         }
+    }
+
+    /**
+     * k个一组，翻转链表
+     * 使用递归实现
+     * @param head
+     * @param k
+     * @return
+     */
+    public static ListNode reverseKGroup(ListNode head,int k) {
+        ListNode cur=head;
+        int count=0;
+        while (cur!=null && count!=k) {
+            cur=cur.next;//第K+1个节点
+            count++;
+        }
+        if(count==k) {//如果满足翻转个数
+            cur=reverseKGroup(cur,k);//翻转下一组的链表
+            //head-当前链表表头
+            //cur-已翻转链表表头
+            while (count-->0) {
+                ListNode temp=head.next;
+                head.next=cur;
+                cur=head;
+                head=temp;
+            }
+            head=cur;
+        }
+        return head;
     }
     public static ListNode reverse(ListNode head) {
         ListNode pre=null;
