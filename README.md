@@ -12,7 +12,7 @@
     - [leetcode3 最长不重复子串的长度](src/main/java/com/ai/algorithm/dynamic/LengthOfLongestSubstring.java)
 - leetcode   
     - [leetcode46 一个数组的全排列组合](/src/main/java/com/ai/algorithm/backtracking/Permute.java)
-        ![递归树](src/main/resources/全排列递归树.jpg)
+        ![递归树](src/main/resources/permute_tree.jpg)
     - [leetcode268 缺失的数字](/src/main/java/com/ai/algorithm/array/MissingNumber.java)
     - [leetcode42 第一个缺失的正整数](/src/main/java/com/ai/algorithm/array/FirstMissingPositive.java)
 - other interview 
