@@ -1,6 +1,6 @@
 package com.ai.algorithm.array;
 
-/**
+/**给定一个数组，数组中包含互不重复的元素，元素为0~n范围内的数字，求该数组中缺失的数。
  * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
  * Input: [3,0,1]
  * Output: 2

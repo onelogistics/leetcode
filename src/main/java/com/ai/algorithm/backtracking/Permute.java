@@ -1,5 +1,8 @@
 package com.ai.algorithm.backtracking;
 
+import com.alibaba.fastjson.JSON;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,11 +12,21 @@ import java.util.List;
  */
 public class Permute {
     private  List<List<Integer>> lists;
+    @Test
+    public void test() {
+        System.out.println( JSON.toJSONString(permute(new int[]{1, 2, 3})));
+    }
     public List<List<Integer>> permute(int[] nums) {
         lists=new ArrayList<>();
         dfs(nums,0);
         return lists;
     }
+
+    /**
+     * 不断交换元素来列出所有可能的排列
+     * @param nums
+     * @param index
+     */
     public void dfs(int[] nums,int index) {
         if(index==nums.length) {
             List<Integer> list=new ArrayList<>();

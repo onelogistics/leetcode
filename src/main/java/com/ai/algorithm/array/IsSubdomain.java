@@ -29,6 +29,7 @@ public class IsSubdomain {
                 return false;
             }
         }
+        //排除123.qq.com 3.qq.com这种case(此时，j=-1，i为对应位置的下标)
         if(subdomain.charAt(i)!='.' && domain.charAt(0)!='.') {
             return false;
         }

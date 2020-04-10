@@ -1,5 +1,7 @@
 package com.ai.algorithm.dynamic;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +14,10 @@ import java.util.Map;
  * Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 public class LengthOfLongestSubstring {
+    @Test
+    public void test() {
+        System.out.println( solution("abbca"));
+    }
     /**
      * 借助Map记录每个字符最后一次出现的位置
      * @param s
@@ -23,6 +29,8 @@ public class LengthOfLongestSubstring {
         for (int j=0,front=0;j<s.length();j++) {
             if(map.containsKey(s.charAt(j))) {
                 //出现重复字符，front调整到此字符上一次出现的位置+1的位置
+                //此处之所以要取较大值，是为了解决类似"abbca"的case，在遍历最后一个a时，map中存储的a对应的value为0，
+                // 此时第一个a其实已经在front边界之外了，所以要排除掉这种情况。
                 front=Math.max(map.get(s.charAt(j))+1,front);
             }
             ans=Math.max(ans,j-front+1);
@@ -45,7 +53,7 @@ public class LengthOfLongestSubstring {
                 front=Math.max(index[s.charAt(j)],front);
             }
             ans=Math.max(ans,j-front+1);
-            //为了方便比较，index中记录的是当前字符的下一个位置
+            //为了方便与0比较，index中记录的是当前字符的下一个位置
             index[s.charAt(j)]=j+1;
         }
         return ans;
