@@ -1,5 +1,6 @@
 package com.ai.algorithm.tree;
 
+import basic.tree.TreeNode;
 import org.junit.Test;
 
 /**

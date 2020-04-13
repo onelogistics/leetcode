@@ -1,5 +1,6 @@
 package com.ai.algorithm.sort;
 
+import basic.sort.*;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;

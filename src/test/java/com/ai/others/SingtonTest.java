@@ -1,8 +1,9 @@
 package com.ai.others;
 
+import common_problem.Sington;
+import common_problem.Sington3;
+import common_problem.Test2;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class SingtonTest {
     @Test

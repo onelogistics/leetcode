@@ -1,5 +1,8 @@
 package com.ai.algorithm.search;
 
+import basic.search.BreadthFirstSearch;
+import basic.search.DeepFirstSearch;
+import basic.search.DynamicProgramming;
 import org.junit.Test;
 
 public class SearchTest {
