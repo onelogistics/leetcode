@@ -20,7 +20,7 @@ public class MergeListSort {
         //利用一快一慢两个指针寻找中间节点
         ListNode fast=head;
         ListNode slow=head;
-        //两个元素及以内不进入循环
+        //链表长度小于2不进入循环
         while (fast!=null && fast.next!=null && fast.next.next!=null) {
             fast=fast.next.next;
             slow=slow.next;
@@ -28,8 +28,10 @@ public class MergeListSort {
         fast=slow;
         slow=slow.next;
         fast.next=null;
+        //各自分别排序
         fast=sort(head);
         slow=sort(slow);
+        //排序完成后归并
         return merge(fast,slow);
     }
 
@@ -52,6 +54,7 @@ public class MergeListSort {
             }
             iterator=iterator.next;
         }
+        //如果其中一个子链表还有剩余，则直接把iterator指向剩余的子链表
         if(left!=null)
             iterator.next=left;
         if(right!=null)

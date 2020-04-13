@@ -1,8 +1,8 @@
 - 排序算法  
-     - [归并排序](src/main/java/basic/sort/MergeSort.java)
-     - [基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
-     - [快排](src/main/java/basic/sort/QuickSort.java)
-     - [堆排序](src/main/java/basic/sort/HeapSort.java)
+     - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
+     - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
+     - [P0:快排](src/main/java/basic/sort/QuickSort.java)
+     - [P0:堆排序](src/main/java/basic/sort/HeapSort.java)
      - [冒泡排序](src/main/java/basic/sort/BubbleSort.java)
      - [计数排序](src/main/java/basic/sort/CountingSort.java)
      - [桶排序](src/main/java/basic/sort/BucketSort.java)
