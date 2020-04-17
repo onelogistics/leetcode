@@ -22,24 +22,26 @@ public class CycleNode {
 
     /**
      * 使用弗洛伊德算法
+     * 设链表的起始节点到环的起始节点距离为s，环的起始节点到快慢指针相遇节点的距离为m,相遇时快指针已经在环中跑了n1圈，慢指针跑了n2圈，则有
+     * s + m + n1r = 2(s + m + n2r),则有s+m=(n1-n2)r,即s与m之和一定是环长度的整数倍，那么用一个指针从链表的起始位置移动，另一个指针从相遇节点同步移动，则这两个指针一定会在环的起始位置相遇。
      * @param head
      * @return
      */
     public ListNode detectCycle(ListNode head) {
-       ListNode slow=head;
-       ListNode fast=head;
-       while (fast!=null && fast.next!=null) {
-           fast=fast.next.next;
-           slow=slow.next;
-           if(fast==slow) {
-               ListNode slow2=head;
-               while (slow2!=slow) {
-                   slow2=slow2.next;
-                   slow=slow.next;
-               }
-               return slow;
-           }
-       }
-       return null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                ListNode slow2 = head;
+                while (slow2 != slow) {
+                    slow2 = slow2.next;
+                    slow = slow.next;
+                }
+                return slow;
+            }
+        }
+        return null;
     }
 }
