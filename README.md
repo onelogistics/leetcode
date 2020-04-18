@@ -13,9 +13,21 @@
     - [leetcode134 加油站](src/main/java/basic/greedy/GasStation.java)
     - [leetcode55 跳跃游戏](src/main/java/basic/greedy/JumpGame.java)
     - [leetcode45 跳跃游戏2](src/main/java/basic/greedy/JumpGame2.java)
+- 树
+    -  [二叉树的构造及深度广度算法](src/main/java/com/ai/algorithm/tree/TreeNode.java)
+    -  [二叉树遍历](src/main/java/com/ai/algorithm/tree/TraverseOrder.java)
+    -  [镜像二叉树](src/main/java/com/ai/algorithm/tree/MirrorBinaryTree.java)
+    -  [最大路径和](src/main/java/com/ai/algorithm/tree/MaxPathSum.java)
+    -  [最长距离](src/main/java/com/ai/algorithm/tree/DiameterOfBinaryTree.java)
+    -  [最低公共祖先节点](src/main/java/com/ai/algorithm/tree/LowestCommonAncestor.java)
+    -  [是否是相同树/镜像树](src/main/java/com/ai/algorithm/tree/IsSameTreeNode.java)
+    -  [判断完全二叉树](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
+    -  [根据先序遍历重建二叉搜索树(预设最大值和最小值)](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
+    -  [二叉搜索树转为排序的双向链表](src/main/java/com/ai/algorithm/tree/ConvertTreeNode2DoubleList.java)
 - 动态规划算法
     - [背包问题](src/main/java/basic/dynamic/BackPack.java)
     - [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
+    - [leetcode121 股票买卖最大利润](src/main/java/com/ai/algorithm/dynamic/MaxProfit.java)
 - leetcode   
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)
         >![递归树](src/main/resources/permute_tree.jpg)
