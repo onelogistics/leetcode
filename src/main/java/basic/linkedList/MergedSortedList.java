@@ -2,6 +2,9 @@ package basic.linkedList;
 
 import java.util.*;
 
+/**
+ * 合并k个有序链表为一个新的链表
+ */
 public class MergedSortedList {
     /**
      * Approach 1:compare one by one
@@ -94,7 +97,8 @@ public class MergedSortedList {
     }*/
     public static void main(String[] args) {
         MergedSortedList mergedSortedList=new MergedSortedList();
-        mergedSortedList.mergeKLists(ListNode.getListNodes(1,4,5),ListNode.getListNodes(1,3,4),ListNode.getListNodes(2,6));
+        ListNode listNode=mergedSortedList.mergeKLists(ListNode.getListNodes(1,4,5),ListNode.getListNodes(1,3,4),ListNode.getListNodes(2,6));
+        ListNode.println(listNode);
     }
     /**
      * merge with divide and conquer(iteration)
@@ -104,13 +108,11 @@ public class MergedSortedList {
      */
     public ListNode mergeKLists(ListNode... lists) {
         if(lists==null || lists.length==0) return null;
-        List<ListNode> queue = new LinkedList<>(Arrays.asList(lists));
-        while (queue.size()>1) {
-            queue.add(merge(queue.get(0),queue.get(1)));
-            queue.remove(0);
-            queue.remove(0);
+        Queue<ListNode> queue=new LinkedList<>(Arrays.asList(lists));
+        while(queue.size()>1) {
+            queue.add(merge(queue.poll(),queue.poll()));
         }
-        return queue.get(0);
+        return queue.poll();
     }
     public ListNode merge(ListNode L1,ListNode L2) {
         ListNode dummy=new ListNode(0);

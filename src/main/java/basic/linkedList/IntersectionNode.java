@@ -1,5 +1,8 @@
 package basic.linkedList;
 
+/**
+ * 注意题目要求，如果题目没假设链表无环，则一定要做链表是否有环的判断，否则下面的两种解法在链表有环时都可能出现死循环
+ */
 public class IntersectionNode {
     /**
      * solution 2:两个链表如有交点，则最后n个节点一定相同，设链表A为子链表a和子链表c拼成，链表B为子链表a和子链表b拼成，

@@ -1,13 +1,13 @@
 package basic.linkedList;
 
+/**
+ * 给定一个链表和一个值x，对此链表节点进行排序，保证小于x的节点都在前面，大于x的节点都在后面。
+ */
 public class PartitionList {
     public static void main(String[] args) {
         PartitionList partitionList=new PartitionList();
         ListNode listNode=partitionList.partition(ListNode.getListNodes(1,4,3,2,5,2),3);
-        while (listNode!=null) {
-            System.out.print(listNode.val);
-            listNode=listNode.next;
-        }
+        ListNode.println(listNode);
     }
 
     /**

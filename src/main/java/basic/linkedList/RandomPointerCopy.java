@@ -1,6 +1,6 @@
 package basic.linkedList;
 
-/**
+/**复制链表（此链表节点比较特征，除了指向下一个节点的指针，还有一个random指针随机指向任意其他节点）
  * 此题难点在于如何解决random point的指向问题，通过使用map，建立了real node和copy node的联系
  */
 public class RandomPointerCopy {

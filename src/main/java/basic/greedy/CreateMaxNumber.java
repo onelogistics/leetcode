@@ -15,10 +15,11 @@ public class CreateMaxNumber {
     private int[] maxArray(int[] nums, int len) {
         Stack<Integer> stack = new Stack<Integer>();
         for (int i = 0; i < nums.length; i++) {
-            //满足弹出条件时，循环弹出
+            //满足弹出条件(剩余个数大于len，并且栈顶元素小于第i个元素)时，循环弹出
             while (stack.size() + nums.length - i > len && !stack.empty() && stack.peek() < nums[i]) {
                 stack.pop();
             }
+            //如果栈中元素个数小于len，放入此元素。
             if (stack.size() < len) {
                 stack.push(nums[i]);
             }

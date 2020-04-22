@@ -17,4 +17,10 @@ public class ListNode {
         }
         return head;
     }
+    public static void println(ListNode head) {
+        while (head!=null) {
+            System.out.print(head.val+" ");
+            head=head.next;
+        }
+    }
 }

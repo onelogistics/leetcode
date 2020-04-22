@@ -23,8 +23,9 @@ public class JumpGame2 {
         int step=0;
         //记录最大可选范围的下标
         int end=0;
+        //因为只要求到达数组最后一个位置，所以是len-1
         for (int i=0;i<nums.length-1;i++) {
-            //不断更新可选范围内的最远距离
+            //不断更新可选范围内的能抵达的最远位置
             maxReach=Math.max(maxReach,i+nums[i]);
             //到达最大可选范围时，必须要跳一步，同时更新最大可选范围值
             if(i==end) {

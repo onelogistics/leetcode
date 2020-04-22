@@ -30,6 +30,7 @@ public class CycleNode {
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
+        //由于fast肯定比slow跑的快，所以只需要对fast进行空指针验证
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
