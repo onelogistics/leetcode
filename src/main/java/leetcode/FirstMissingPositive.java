@@ -1,4 +1,4 @@
-package basic.array;
+package leetcode;
 
 /**
  * leetcode 041  hard 第一个缺失的正整数

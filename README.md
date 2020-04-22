@@ -1,3 +1,10 @@
+- 动态规划算法
+    - [背包问题](src/main/java/basic/dynamic/BackPack.java)
+    - [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
+    - [leetcode121 股票买卖最大利润](src/main/java/basic/dynamic/MaxProfit.java)
+    - [最长公共子串](src/main/java/basic/dynamic/LongestCommonSubString.java)
+    - [最长公共子序列](src/main/java/basic/dynamic/LongestCommonSubsequence.java)
+    - [leetcode5 最长回文字符串](src/main/java/basic/dynamic/LongestPalindrome.java)
 - 排序算法  
      - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
      - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
@@ -24,18 +31,14 @@
     -  [判断完全二叉树](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
     -  [根据先序遍历重建二叉搜索树(预设最大值和最小值)](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
     -  [二叉搜索树转为排序的双向链表](src/main/java/com/ai/algorithm/tree/ConvertTreeNode2DoubleList.java)
-- 动态规划算法
-    - [背包问题](src/main/java/basic/dynamic/BackPack.java)
-    - [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
-    - [leetcode121 股票买卖最大利润](src/main/java/com/ai/algorithm/dynamic/MaxProfit.java)
+- 搜索算法
+    - [两个有序数组的中位数](src/main/java/basic/search/FindMedianSortedArrays.java)
 - leetcode   
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)
         >![递归树](src/main/resources/permute_tree.jpg)
-    - [leetcode268 缺失的数字](/basic/array/MissingNumber.java)
-    - [leetcode42 第一个缺失的正整数](/basic/array/FirstMissingPositive.java)
-- other interview 
-    - [只有0,1,2三个元素的有限排序](/basic/sort/ShopeeInterView.java)
-    - [两个有序数组的中位数](/basic/search/FindMedianSortedArrays.java)
-    - [判断A是否是B的子域名](/basic/array/IsSubdomain.java)
+    - [leetcode268 缺失的数字](src/main/java/leetcode/MissingNumber.java)
+    - [leetcode42 第一个缺失的正整数](src/main/java/leetcode/FirstMissingPositive.java)
+    - [只有0,1,2三个元素的有限排序](src/main/java/leetcode/ShopeeInterView.java)
+    - [判断A是否是B的子域名](src/main/java/leetcode/IsSubdomain.java)
     
   

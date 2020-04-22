@@ -12,6 +12,7 @@ import java.util.Arrays;
 public class BackPack {
     public static void main(String[] args) {
         /**
+         * 有一个容量为 K的背包，和一些物品。这些物品分别有两个属性，体积 w 和价值 v，每种物品只有一个。要求用这个背包装下价值尽可能多的物品，求该最大价值，背包可以不被装满。
          * 不要求背包装满，则最优解是装入第一件物品和第三件物品
          * 最后sumW=6,sumV=11
          */
@@ -70,7 +71,7 @@ public class BackPack {
 
     /**
      * 完全背包问题：相较于01背包问题，每个物品可以重复使用多次
-     *
+     *将多次使用的同一个物品看做一个整体
      * @param w
      * @param v
      * @param K

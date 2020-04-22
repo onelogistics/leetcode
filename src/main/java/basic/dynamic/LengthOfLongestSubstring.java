@@ -41,7 +41,7 @@ public class LengthOfLongestSubstring {
     }
 
     /**
-     * 嘉定字符串中的字符都是ASCII码，可以利用数组实现
+     * 假定字符串中的字符都是ASCII码，可以利用数组实现
      * @param s
      * @return
      */

@@ -1,4 +1,4 @@
-package basic.array;
+package leetcode;
 
 import org.junit.Assert;
 
