@@ -1,91 +1,96 @@
 package basic.linkedList;
 
-import basic.linkedList.ListNode;
-
-/**反转指定范围内的列表
+/**
+ * 反转指定范围内的列表
+ *
  * @author JunjunYang
  * @date 2019/12/20 17:41
  */
 public class RevertLinkedList {
     public static void main(String[] args) {
-        ListNode node=ListNode.getListNodes(1,2,3,4,5,6,7);
-        ListNode revert=reverseKGroup(node,3);
-        while (revert!=null) {
-            System.out.print(revert.val+" ");
-            revert=revert.next;
-        }
+        ListNode.println(reverseListIterator(ListNode.getListNodes(1, 2, 3, 4, 5, 6, 7)));
+        ListNode.println(reverseListRecursion(ListNode.getListNodes(1, 2, 3, 4, 5, 6, 7)));
+        ListNode.println(reverseKGroup(ListNode.getListNodes(1, 2, 3, 4, 5, 6, 7), 3));
+        ListNode.println(reverseBetween(ListNode.getListNodes(1, 2, 3, 4, 5, 6, 7), 2,4));
     }
 
     /**
-     * k个一组，翻转链表
-     * 使用递归实现
-     * @param head
-     * @param k
-     * @return
+     * 迭代法反转链表
+     * 依次记录pre指针和cur指针，不断遍历
      */
-    public static ListNode reverseKGroup(ListNode head,int k) {
-        ListNode cur=head;
-        int count=0;
-        while (cur!=null && count!=k) {
-            cur=cur.next;//第K+1个节点
-            count++;
-        }
-        if(count==k) {//如果满足翻转个数
-            cur=reverseKGroup(cur,k);//翻转下一组的链表
-            //head-当前链表表头
-            //cur-已翻转链表表头
-            while (count-->0) {
-                ListNode temp=head.next;
-                head.next=cur;
-                cur=head;
-                head=temp;
-            }
-            head=cur;
-        }
-        return head;
-    }
-    public static ListNode reverse(ListNode head) {
-        ListNode pre=null;
-        ListNode cur=head;
-        while(cur!=null) {
-            ListNode next=cur.next;
-            cur.next=pre;
-            pre=cur;
-            cur=next;
+    public static ListNode reverseListIterator(ListNode head) {
+        ListNode cur = head;
+        ListNode pre = null;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
         return pre;
     }
+
+    /**
+     * 递归法
+     * 假设从k+1之后的链表节点都已经反转完成，那要怎么完成前面节点的反转？k.next.next=k,将第k+1个节点的next指向第k个节点，然后记得将第k个节点的next指向null
+     */
+    public static ListNode reverseListRecursion(ListNode head) {
+        if (head == null || head.next == null) return head;
+        ListNode cur = reverseListRecursion(head.next);
+        head.next.next = head;
+        head.next = null;
+        return cur;
+    }
+
+    /**
+     * leetcode 25
+     * 每k个节点一组，反转链表
+     */
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        int count = 0;
+        ListNode cur = head;
+        while (cur != null && ++count != k) {
+            cur = cur.next;
+        }
+        //不足K个，直接返回
+        if (cur == null) return head;
+        //递归下一组
+        cur = reverseKGroup(cur.next, k);
+        while (k-- > 0) {
+            //调整指针指向
+            ListNode next = head.next;
+            head.next = cur;
+            //相应指针依次向后移动
+            cur = head;
+            head = next;
+        }
+        return cur;
+    }
+
+    /**
+     * leetcode 92 https://www.cnblogs.com/grandyang/p/4306611.html
+     * 反转m到n之间的链表节点,要考虑第m-1个节点为null的情况
+     * 1 -> 2 -> 3 -> 4 -> 5 -> NULL
+     * <p>
+     * 1 -> 3 -> 2 -> 4 -> 5 -> NULL
+     * <p>
+     * 1 -> 4 -> 3 -> 2 -> 5 -> NULL
+     */
     public static ListNode reverseBetween(ListNode head, int m, int n) {
-        ListNode pre=null;
-        ListNode cur=head;
-        //cur已经指向head了，所以只用移动m-1次，就可以指向第m个节点
-        while (m>1) {
-            pre=cur;
-            cur=cur.next;
-            m--;n--;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode pre = dummy;
+        //找到第m-1个节点
+        for (int i = 0; i < m - 1; i++) pre = pre.next;
+        //找到第m个节点
+        ListNode cur = pre.next;
+        //循环，依次更改指针指向，cur指向的节点不断后移
+        for (int i = m; i < n; i++) {
+            ListNode t = cur.next;
+            cur.next = t.next;
+            t.next = pre.next;
+            pre.next = t;
         }
-        //第M-1个节点
-        ListNode cHead=pre;
-        //第M个节点
-        ListNode cTail=cur;
-        //反转从M到N之间的指针
-        while (n>0) {
-            //反转指针指向
-            ListNode third=cur.next;
-            cur.next=pre;
-            //指针迭代
-            pre=cur;
-            cur=third;
-            n--;
-        }
-        //原第M个节点指向第N+1个节点
-        cTail.next=cur;
-        if(cHead!=null) {
-            //原第M-1个节点指向第N个节点
-            cHead.next=pre;
-            return head;
-        }
-        //第M-1个节点为NULL，第N个节点即为头结点
-        return pre;
+        return dummy.next;
     }
 }
