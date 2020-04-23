@@ -18,6 +18,8 @@
     - [复制含有随机指针的链表](src/main/java/basic/linkedList/RandomPointerCopy.java)
     - [各种反转链表](src/main/java/basic/linkedList/RevertLinkedList.java)
     - [成对交换节点](src/main/java/basic/linkedList/SwapPairs.java)
+- 堆栈
+    - [带最小值方法的栈](src/main/java/basic/QueueAndStack/MinStack.java)
 - 排序算法  
      - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
      - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)

@@ -2,35 +2,59 @@ package basic.QueueAndStack;
 
 import java.util.Stack;
 
+/**
+ * 你实现的栈将支持push，pop 和 min 操作，所有操作要求都在O(1)时间内完成。
+ */
 public class MinStack {
-    private Stack<Long> stack=new Stack<>();
-    private long min;
-    /** initialize your data structure here. */
+    public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        minStack.getMin(); // return -3
+        minStack.pop();
+        minStack.top();    // return 0
+        minStack.getMin(); // return -2
+    }
+
+    private Stack<Integer> stack = new Stack();
+    private Stack<Integer> minStack = new Stack();
+
+    /**
+     * initialize your data structure here.
+     */
     public MinStack() {
+
     }
 
     public void push(int x) {
-        if(stack.isEmpty()) {
-            stack.push(0L);
-            min=x;
-        }else {
-            stack.push(x-min);
-            if(x<min) min=x;
+        stack.push(x);
+        if (minStack.isEmpty() || minStack.peek() >= x) {
+            minStack.push(x);
+        } else {
+            minStack.push(minStack.peek());
         }
     }
+
     public void pop() {
-        if(stack.isEmpty()) return;
-        long x=stack.pop();
-        if(x<0) min=min-x;
+        minStack.pop();
+        stack.pop();
     }
 
     public int top() {
-        long x=stack.peek();
-        if(x>0) return (int) (min+x);
-        else return (int) min;
+        return stack.isEmpty() ? 0 : stack.peek();
     }
 
     public int getMin() {
-        return (int) min;
+        return stack.isEmpty() ? 0 : minStack.peek();
     }
 }
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
