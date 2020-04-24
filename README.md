@@ -20,6 +20,8 @@
     - [成对交换节点](src/main/java/basic/linkedList/SwapPairs.java)
 - 堆栈
     - [带最小值方法的栈](src/main/java/basic/QueueAndStack/MinStack.java)
+    - [用栈实现队列](src/main/java/basic/QueueAndStack/MyQueue.java)
+    - [用队列实现栈](src/main/java/basic/QueueAndStack/MyStack.java)
 - 排序算法  
      - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
      - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
