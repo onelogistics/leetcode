@@ -2,6 +2,7 @@ package basic.search;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableMap;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,16 +17,78 @@ import java.util.stream.Collectors;
  */
 public class SmartTipsByPrefix {
     private static final Logger LOG = LoggerFactory.getLogger(SmartTipsByPrefix.class);
-
-    public static void main(String[] args) {
-        SmartTipsByPrefix smartTipsByPrefix = new SmartTipsByPrefix();
-        System.out.println(smartTipsByPrefix.compareStr("abawe", "abacd", -1));
-        new SmartTipsByPrefix().solution("aba", ImmutableMap.of("aba", 5, "bbb", 10, "abacd", 6, "wrer", 2, "abawe", 20), 2);
-
+    @Test
+    public  void test() {
+        Map<String,Integer> map=ImmutableMap.of("aba", 5,
+                "bbb", 10, "abacd", 6,
+                "wrer", 2, "abawe", 20);
+        new SmartTipsByPrefix().solution("aba", map, 3);
+    }
+    @Test
+    public  void test2() {
+        Trie trie=new Trie();
+        for (int i=0;i<5;i++) {
+            trie.insert("aba");
+        }
+        for (int i=0;i<10;i++) {
+            trie.insert("bbb");
+        }
+        for (int i=0;i<6;i++) {
+            trie.insert("abacd");
+        }
+        for (int i=0;i<2;i++) {
+            trie.insert("wrer");
+        }
+        for (int i=0;i<20;i++) {
+            trie.insert("abawe");
+        }
+        new SmartTipsByPrefix().solution2(trie.root,"aba",3);
     }
 
     /**
-     * 解决思路(也可以用trie树+topK来处理，不过trie树比较复杂)
+     * 使用trie树实现
+     * 用户输入一个字符串、给出所有前缀匹配此字符串的集合，且按照字符串搜索次数排序
+     * @param prefix
+     * @return
+     */
+    public List<String> solution2(Trie.TrieNode root, String prefix, int K){
+        //找到前缀的最末尾字符对应的TrieNode;
+        int index=0;
+        while (index<prefix.length()) {
+            if(root.children.containsKey(prefix.charAt(index))) {
+                root=root.children.get(prefix.charAt(index));
+                index++;
+            }
+        }
+        PriorityQueue<Tuple2> priorityQueue=new PriorityQueue<>(Comparator.comparingInt(o->o.t2));
+        smartTips(root,prefix,K,priorityQueue);
+        List<String> result = new ArrayList<>();
+        while (!priorityQueue.isEmpty()) {
+            Tuple2 tuple2 = priorityQueue.poll();
+            result.add(tuple2.t1);
+        }
+        result = result.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        LOG.info("result:{}", JSON.toJSONString(result));
+        return result;
+    }
+    public void smartTips(Trie.TrieNode root, String prefix, int k, PriorityQueue<Tuple2> priorityQueue) {
+        //到达终结点
+        if(root.count>0) {
+            if(priorityQueue.size()<k) {
+                priorityQueue.add(new Tuple2(prefix,root.count));
+            }else if(priorityQueue.peek().t2<root.count) {
+                priorityQueue.poll();
+                priorityQueue.add(new Tuple2(prefix,root.count));
+            }
+        }
+        if(root.children!=null) {
+            for (Trie.TrieNode trieNode:root.children.values()) {
+                smartTips(trieNode,prefix+trieNode.c,k,priorityQueue);
+            }
+        }
+    }
+    /**
+     * 解决思路
      * 对于用户搜索次数使用map存储，用户搜索一个字符串、不存在则value设为1，存在则value+1，处理完所有字符串，时间复杂度为O(N)
      * 此处省略此步骤，直接作为入参输入。
      * 整体思路，先对字符串集合用快排字典序排序，排序结束后找出前缀匹配的首字符串下标和尾字符串下标，此范围内即为符合条件的字符串。

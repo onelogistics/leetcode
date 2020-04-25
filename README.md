@@ -28,6 +28,7 @@
     - [广度优先搜索](src/main/java/basic/search/BreadthFirstSearch.java)
     - [leetcode4 查找两个有序数组的中位数](src/main/java/basic/search/FindMedianSortedArrays.java)
     - [leetcode28 IndexOf](src/main/java/basic/search/IndexOfImpl.java)
+    - [leetcode298 实现Trie树](src/main/java/basic/search/Trie.java)
 - 排序算法  
      - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
      - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
@@ -62,4 +63,3 @@
 - 疑难算法(面试前背下来)
     - [leetcode28 IndexOf KMP算法](src/main/java/basic/search/IndexOfImpl.java)
     - [hard 逆波兰表达式运算](src/main/java/basic/QueueAndStack/NiBoLan.java)
-    - [Trie树]
