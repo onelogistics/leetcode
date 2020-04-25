@@ -22,6 +22,12 @@
     - [带最小值方法的栈](src/main/java/basic/QueueAndStack/MinStack.java)
     - [用栈实现队列](src/main/java/basic/QueueAndStack/MyQueue.java)
     - [用队列实现栈](src/main/java/basic/QueueAndStack/MyStack.java)
+    - [实现简单计算器](src/main/java/basic/QueueAndStack/BasicCalculator.java)
+    - [hard 逆波兰表达式运算](src/main/java/basic/QueueAndStack/NiBoLan.java)
+- 搜索算法
+    - [广度优先搜索](src/main/java/basic/search/BreadthFirstSearch.java)
+    - [leetcode4 查找两个有序数组的中位数](src/main/java/basic/search/FindMedianSortedArrays.java)
+    - [leetcode28 IndexOf](src/main/java/basic/search/IndexOfImpl.java)
 - 排序算法  
      - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
      - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
@@ -53,5 +59,7 @@
     - [只有0,1,2三个元素的有限排序](src/main/java/leetcode/ShopeeInterView.java)
     - [判断A是否是B的子域名](src/main/java/leetcode/IsSubdomain.java)
     -[leetcode215 数组中第k大的元素](src/main/java/leetcode/FindKthLargest.java)
-    
-  
+- 疑难算法(面试前背下来)
+    - [leetcode28 IndexOf KMP算法](src/main/java/basic/search/IndexOfImpl.java)
+    - [hard 逆波兰表达式运算](src/main/java/basic/QueueAndStack/NiBoLan.java)
+    - [Trie树]

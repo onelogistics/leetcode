@@ -16,7 +16,8 @@ package basic.search;
  */
 public class IndexOfImpl {
     public static void main(String[] args) {
-        System.out.println(new IndexOfImpl().solution("mississippi", "issipi"));
+        System.out.println(new IndexOfImpl().solution("mississippi", "issipp"));
+        System.out.println(new IndexOfImpl().solutionKMP("mississippi", "issipp"));
         System.out.println(new IndexOfImpl().getNext("abababca"));
     }
 
@@ -67,6 +68,7 @@ public class IndexOfImpl {
             for (int j = 0; ; j++) {
                 //匹配到了最后一个字符则说明匹配成功
                 if (j == needle.length()) return i;
+                //i+j等于haystack的长度说明haystack剩下的长度已经不足以和needle对比
                 if (i + j == haystack.length()) return -1;
                 //i是fromIndex，i+j代表本轮要参与对比的字符
                 if (needle.charAt(j) != haystack.charAt(i + j)) break;
@@ -104,6 +106,7 @@ public class IndexOfImpl {
 
     /**
      * 获取next数组
+     * next数组其实是PMP(partial match table)部分匹配表的一种变形
      * 获取next数组的过程中也可以看做是一次字符串匹配，从当前字符串后缀中找到匹配前缀的字符串
      *
      * @param str
@@ -115,7 +118,7 @@ public class IndexOfImpl {
         //i指向后缀字符串
         //j指向前缀字符串
         int i = 0, j = -1;
-        while (i < str.length() - 1) {
+        while (i < str.length()-1) {
             if (j == -1 || str.charAt(i) == str.charAt(j)) {
                 ++i;
                 ++j;

@@ -17,6 +17,7 @@ public class BasicCalculator {
             if(c==' ') continue;
             if(Character.isDigit(c)) operand=operand*10+(c-'0');
             else {
+                //遇见运算符时，根据上一个运算符的状态决定如何进行处理
                 if(sign=='+') stack.push(operand);
                 if(sign=='-') stack.push(-operand);
                 if(sign=='*') stack.push(stack.pop()*operand);
