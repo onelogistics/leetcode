@@ -29,6 +29,7 @@
     - [leetcode4 查找两个有序数组的中位数](src/main/java/basic/search/FindMedianSortedArrays.java)
     - [leetcode28 IndexOf](src/main/java/basic/search/IndexOfImpl.java)
     - [leetcode298 实现Trie树](src/main/java/basic/search/Trie.java)
+    - [leetcode34 升序重复数组中，查找给定整数的左右边界](src/main/java/basic/search/SearchRange.java)
 - 排序算法  
      - [P0:归并排序](src/main/java/basic/sort/MergeSort.java)
      - [P0:基于链表的归并排序](src/main/java/basic/sort/MergeListSort.java)
@@ -50,8 +51,6 @@
     -  [判断完全二叉树](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
     -  [根据先序遍历重建二叉搜索树(预设最大值和最小值)](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
     -  [二叉搜索树转为排序的双向链表](src/main/java/com/ai/algorithm/tree/ConvertTreeNode2DoubleList.java)
-- 搜索算法
-    - [两个有序数组的中位数](src/main/java/basic/search/FindMedianSortedArrays.java)
 - leetcode   
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)
         >![递归树](src/main/resources/permute_tree.jpg)

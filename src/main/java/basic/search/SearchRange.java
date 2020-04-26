@@ -1,6 +1,11 @@
 package basic.search;
 
-/**
+import org.junit.Test;
+
+import java.util.Arrays;
+
+/**二分查找有几种写法？它们的区别是什么？ - labuladong的回答 - 知乎
+ https://www.zhihu.com/question/36132386/answer/712269942
  * 34. Find First and Last Position of Element in Sorted Array
  * Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
  * <p>
@@ -16,7 +21,12 @@ package basic.search;
  */
 public class SearchRange {
     public static void main(String[] args) {
-        new SearchRange().searchRange(new int[]{1, 1, 2, 2, 2, 3, 4, 5}, 0);
+        System.out.println(Arrays.toString(new SearchRange().searchRange(new int[]{1, 1, 2, 2, 2, 3, 4, 5}, 0)));
+        System.out.println(Arrays.toString(new SearchRange().searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8)));
+    }
+    @Test
+    public void test() {
+        System.out.println(new SearchRange().search(new int[]{5}, 6));
     }
 
     /**
@@ -29,10 +39,12 @@ public class SearchRange {
     public int[] searchRange(int[] nums, int target) {
         int[] ans = {-1, -1};
         int leftIndex = find(nums, target, true);
+        //查找出来后要再进行一次边界条件的补充判断。
         if (leftIndex == nums.length || nums[leftIndex] != target) {
             return ans;
         }
         ans[0] = leftIndex;
+        //之所以要减1是因为我们在nums[mid] == target时，对left赋值为mid+1，所以nums[left]肯定不等于mid
         ans[1] = find(nums, target, false) - 1;
         return ans;
     }
@@ -55,5 +67,27 @@ public class SearchRange {
             }
         }
         return lo;
+    }
+
+    /**
+     * 最基础的二分查找
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int search(int[] nums,int target) {
+        int lo=0;
+        int hi=nums.length;
+        while(lo<hi) {
+            int mid=lo+(hi-lo)/2;
+            if(nums[mid]==target) {
+                return mid;
+            }else if(nums[mid]>target) {
+                hi=mid;
+            }else{
+                lo=mid+1;
+            }
+        }
+        return -1;
     }
 }
