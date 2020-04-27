@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class BstFromPreorder {
     int index;
     public static void main(String[] args) {
-        TreeNode treeNode=new BstFromPreorder().solution(new int[]{8,5,1,7,10,12});
+        TreeNode treeNode=new BstFromPreorder().solution(new int[]{5,3,2,4,7,6,8});
         System.out.println(Arrays.toString(TraverseOrder.preOrderRecursion(treeNode).toArray()));
     }
 
@@ -21,16 +21,19 @@ public class BstFromPreorder {
 
     /**
      * 设定最大值与最小值，以设置终止条件
+     * 巧妙的通过最大最小值来终止递归
      * @param preOrder
      * @param minValue
      * @param maxValue
      * @return
      */
     private TreeNode solution(int[] preOrder,int minValue,int maxValue) {
+        //查找到数组末尾，返回null
         if(index==preOrder.length) {
             return null;
         }
         int val=preOrder[index];
+        //遍历到的value已经不符合二叉搜索树的定义，返回null
         if(val<minValue || val>maxValue) {
             return null;
         }

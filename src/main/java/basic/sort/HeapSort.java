@@ -38,7 +38,7 @@ public class HeapSort {
      * @param length 需要调整的节点尾下标，不包含此下标。
      */
     public void adjustHeap(int[] array, int i, int length) {
-        //记录需要调整的节点值!!!
+        //notice 记录需要调整的节点值!!!
         int temp = array[i];
         for (int k = 2 * i + 1; k < length; k = 2 * k + 1) {
             //右子节点较大时，使用右子节点

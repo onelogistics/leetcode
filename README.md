@@ -50,7 +50,7 @@
     -  [是否是相同树/镜像树](src/main/java/com/ai/algorithm/tree/IsSameTreeNode.java)
     -  [判断完全二叉树](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
     -  [根据先序遍历重建二叉搜索树(预设最大值和最小值)](src/main/java/com/ai/algorithm/tree/IsCompleteTree.java)
-    -  [二叉搜索树转为排序的双向链表](src/main/java/com/ai/algorithm/tree/ConvertTreeNode2DoubleList.java)
+    -  [leetcode426 二叉搜索树转为排序的双向链表](src/main/java/com/ai/algorithm/tree/ConvertTreeNode2DoubleList.java)
 - leetcode   
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)
         >![递归树](src/main/resources/permute_tree.jpg)

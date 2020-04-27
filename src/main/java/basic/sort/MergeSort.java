@@ -2,6 +2,10 @@ package basic.sort;
 
 import java.util.Arrays;
 
+/**
+ * 主体思想：建立一个临时数组，不断分而治之，直到left=right,然后开始merge
+ *
+ */
 public class MergeSort {
     public static void main(String[] args) {
         int[] a = {2, 3, 5, 1, 4, 1, 4, 6};
@@ -15,7 +19,7 @@ public class MergeSort {
      * @param array
      */
     public void sort(int[] array) {
-        //提前创建临时数组，避免迭代/递归过程中频繁开辟空间
+        //notice 提前创建临时数组来存储merge后的数据，避免迭代/递归过程中频繁开辟空间
         int[] temp = new int[array.length];
         sort(array, 0, array.length - 1, temp);
     }
