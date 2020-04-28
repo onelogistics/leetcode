@@ -1,4 +1,4 @@
-package common_problem;
+package common_problem.concurrent;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 

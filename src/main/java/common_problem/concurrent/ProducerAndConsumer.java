@@ -1,4 +1,4 @@
-package com.ai.concurrent;
+package common_problem.concurrent;
 
 import org.junit.Test;
 import java.util.LinkedList;
