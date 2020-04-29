@@ -43,6 +43,7 @@ public class IsCompleteTree {
             queue.add(node.left);
             queue.add(node.right);
         }
+        //notice 加上队列是否为为空的判断
         //弹出队列头部的NULL节点，如果还有多余节点，则说明不为完全二叉树
         while (!queue.isEmpty() && queue.peek() == null) {
             queue.poll();

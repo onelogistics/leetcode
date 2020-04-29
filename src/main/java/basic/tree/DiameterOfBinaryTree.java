@@ -5,7 +5,7 @@ package basic.tree;
  *      2
  *   3      4
  * 5
- * 则最长距离为从3节点到5节点，最终结果为3
+ * 则最长距离为从4节点到5节点，最终结果为3
  *
  * @author JunjunYang
  * @date 2019/12/30 20:38
@@ -26,6 +26,12 @@ public class DiameterOfBinaryTree {
         depth(root);
         return ans;
     }
+
+    /**
+     * 递归求解节点的最大深度，顺便计算最大直径
+     * @param node
+     * @return
+     */
     public int depth(TreeNode node) {
         if (node == null) return 0;
         int L = depth(node.left);

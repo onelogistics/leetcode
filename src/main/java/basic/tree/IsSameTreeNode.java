@@ -29,11 +29,12 @@ public class IsSameTreeNode {
      * @return
      */
     public boolean isMirror(TreeNode root1,TreeNode root2) {
+        //边界条件，都为null时返回true，只有其中一个不为null时返回false，两个都不为null时进入递归
         if(root1==null && root2==null) {
             return true;
         }else if(root1==null || root2==null) {
             return false;
         }
-        return root1.val==root2.val && isSameTreeNode(root1.left,root2.right) && isSameTreeNode(root1.right,root2.left);
+        return root1.val==root2.val && isMirror(root1.left,root2.right) && isMirror(root1.right,root2.left);
     }
 }

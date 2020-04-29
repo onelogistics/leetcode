@@ -1,6 +1,6 @@
 package basic.tree;
 
-/**
+/**leetcode 110
  * Given a binary tree, determine if it is height-balanced.
  * a binary tree in which the left and right subtrees of every node differ in height by no more than 1.
  *
@@ -18,7 +18,8 @@ public class IsBalanced {
         if (root == null) {
             return true;
         }
-        return Math.abs(TreeNode.maxPath(root.left) - TreeNode.maxPath(root.right)) < 1 && solution(root.left) && solution(root.right);
+        //高度差小于等于1且左右子树也分别都是平衡树
+        return Math.abs(TreeNode.maxPath(root.left) - TreeNode.maxPath(root.right)) <= 1 && solution(root.left) && solution(root.right);
     }
 
     /**

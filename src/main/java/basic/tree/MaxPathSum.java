@@ -25,7 +25,7 @@ public class MaxPathSum {
         if(root == null) {
             return 0;
         }
-        //左子树单边最长路径(从左子树的任意子节点开始并以左子树根节点结尾)之和有可能是负数，此时根节点的最长路径就无需左子树了，直接从自身起始，所有要取0和左子树的较大值
+        //左子树单边最长路径(从左子树的任意子节点开始并以左子树根节点结尾)之和有可能是负数，此时根节点的最长路径就无需左子树了，直接从自身起始，所以要取0和左子树的较大值
         int left=Math.max(0,compute(root.left));
         int right=Math.max(0,compute(root.right));
         //可能不经过root节点
