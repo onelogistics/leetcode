@@ -52,7 +52,6 @@
     -  [P1:镜像二叉树](src/main/java/basic/tree/MirrorBinaryTree.java)
     -  [P0:二叉树的构造及深度广度算法](src/main/java/basic/tree/TreeNode.java)
     -  [P0:二叉树遍历](src/main/java/basic/tree/TraverseOrder.java)
-
 - leetcode   
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)
         >![递归树](src/main/resources/permute_tree.jpg)
@@ -61,6 +60,17 @@
     - [只有0,1,2三个元素的有限排序](src/main/java/leetcode/ShopeeInterView.java)
     - [判断A是否是B的子域名](src/main/java/leetcode/IsSubdomain.java)
     -[leetcode215 数组中第k大的元素](src/main/java/leetcode/FindKthLargest.java)
+- 其他问题
+    - [生产者与消费者](src/main/java/common_problem/concurrent/ProducerAndConsumer2.java)
+    - [多线程交替打印](src/main/java/common_problem/concurrent/MultiThreadPrint2.java)
+    - [JDK自身的动态代理](src/main/java/common_problem/DynamicAgent.java)
+    - [GClib动态代理](src/main/java/common_problem/CGlibAgent.java)
+    - [CyclicBarrier循环栅栏API](src/main/java/common_problem/CyclicBarrierDemo.java)
+    - [CAS乐观锁](src/main/java/common_problem/OptimisticLock.java)
+    - [volatile单例](src/main/java/common_problem/SingtionVolatile.java)
+    - [枚举单例](src/main/java/common_problem/SingtonEnum.java)
+    - [静态内部类单例](src/main/java/common_problem/SingtonInnerClass.java)
+    
 - 疑难算法(面试前背下来)
     - [leetcode28 IndexOf KMP算法](src/main/java/basic/search/IndexOfImpl.java)
     - [hard 逆波兰表达式运算](src/main/java/basic/QueueAndStack/NiBoLan.java)
