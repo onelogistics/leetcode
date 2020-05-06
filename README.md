@@ -53,6 +53,8 @@
     -  [P0:二叉树的构造及深度广度算法](src/main/java/basic/tree/TreeNode.java)
     -  [P0:二叉树遍历](src/main/java/basic/tree/TraverseOrder.java)
 - leetcode   
+    - [大数相加](src/main/java/leetcode/AddTwoNumber.java)
+    - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)
         >![递归树](src/main/resources/permute_tree.jpg)
     - [leetcode268 缺失的数字](src/main/java/leetcode/MissingNumber.java)
