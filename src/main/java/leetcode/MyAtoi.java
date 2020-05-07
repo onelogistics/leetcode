@@ -35,6 +35,7 @@ package leetcode;
 public class MyAtoi {
     public static void main(String[] args) {
         System.out.println(new MyAtoi().myAtoi("   -42"));
+        System.out.println(new MyAtoi().myAtoi(String.valueOf(Integer.MIN_VALUE)));
     }
 
     /**
@@ -46,6 +47,7 @@ public class MyAtoi {
     public int myAtoi(String str) {
         int i = 0;
         boolean negative = false;
+        //将数据全部转成负数，方便判断是否超过极限值
         int limit = -Integer.MAX_VALUE;
         int sum = 0;
         //跳过空白符
@@ -59,9 +61,11 @@ public class MyAtoi {
         //进入数字循环
         while (i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
             int val = Character.digit(str.charAt(i), 10);
+            //判断是否越界
             if (sum < limit / 10)
                 return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             sum = sum * 10;
+            //如果传入的str是Integer.MIN_VALUE,此处会进入越界判断
             if (sum < limit + val) {
                 return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }
