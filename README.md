@@ -1,5 +1,6 @@
 - 动态规划算法
     - [背包问题](src/main/java/basic/dynamic/BackPack.java)
+    - [硬币找零问题](src/main/java/basic/dynamic/CoinChange.java)
     - [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
     - [leetcode121 股票买卖最大利润](src/main/java/basic/dynamic/MaxProfit.java)
     - [最长公共子串](src/main/java/basic/dynamic/LongestCommonSubString.java)

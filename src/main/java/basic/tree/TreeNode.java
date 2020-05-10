@@ -91,6 +91,7 @@ public class TreeNode {
             //此循环是为了将上一层的所有节点都弹出队列，以便统计min值
             while (size > 0) {
                 TreeNode node = queue.poll();
+                //左右子树都为null，此节点为叶子节点
                 if (node.left == null && node.right == null) {
                     return min;
                 }
