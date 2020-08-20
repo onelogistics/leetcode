@@ -16,7 +16,7 @@
     - [两条链表的相交点](src/main/java/basic/linkedList/IntersectionNode.java)
     - [合并多个有序链表](src/main/java/basic/linkedList/MergedSortedList.java)
     - [按照指定值对链表进行分割](src/main/java/basic/linkedList/PartitionList.java)
-    - [复制含有随机指针的链表](src/main/java/basic/linkedList/RandomPointerCopy.java)
+    - [leetcode138 复制含有随机指针的链表](src/main/java/basic/linkedList/RandomPointerCopy.java)
     - [各种反转链表](src/main/java/basic/linkedList/RevertLinkedList.java)
     - [成对交换节点](src/main/java/basic/linkedList/SwapPairs.java)
 - 堆栈
