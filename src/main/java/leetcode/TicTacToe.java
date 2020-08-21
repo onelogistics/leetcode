@@ -52,10 +52,19 @@ package leetcode;
  * 题解参考：https://blog.csdn.net/hebtu666/article/details/104103177/
  */
 public class TicTacToe {
-
+    private int[] rows;
+    private int[] cols;
+    private int diagonalLine;
+    private int backDiagonalLine;
+    /** 解法2所需变量*/
+    private int[][] array;
     /** Initialize your data structure here. */
     public TicTacToe(int n) {
-
+        rows=new int[n];
+        cols=new int[n];
+        diagonalLine=0;
+        backDiagonalLine=0;
+        array=new int[n][n];
     }
     /** Player {player} makes a move at ({row}, {col}).
      @param row The row of the board.
@@ -66,6 +75,85 @@ public class TicTacToe {
      1: Player 1 wins.
      2: Player 2 wins. */
     public int move(int row, int col, int player) {
+        return solution1(row, col, player);
+    }
+
+    /**
+     * 解法1：基本思路，n*n的井字棋，只有当某个玩家占据了一整行、一整列、或者对角线的时候才能获胜。
+     * 因此，我们可以记录每一行、每一列和两个对角线的累计和，玩家1下一颗棋，棋子所在行列对角线加1，玩家2减1
+     * 只有当某一行、某一列或者对角线累加和为n或者-n时，才代表有玩家胜出
+     * @param row
+     * @param col
+     * @param player
+     * @return
+     */
+    private int solution1(int row, int col, int player) {
+        int toAdd=player==1 ? 1 : -1;
+        int target=player==1?rows.length:-rows.length;
+        rows[row]+=toAdd;
+        cols[col]+=toAdd;
+        if(row==col) {
+            diagonalLine++;
+        }
+        if(row==rows.length-col-1) {
+            backDiagonalLine++;
+        }
+        if(rows[row]==target || cols[col]==target || diagonalLine==target || backDiagonalLine==target) {
+            return player;
+        }
         return 0;
     }
+
+    /**
+     * 解法2：建立一个n*n的棋盘，玩家1落子设为1，玩家2落子设为2，分别统计行、列和对角线，检查是否胜出
+     * @param row
+     * @param col
+     * @param player
+     * @return
+     */
+    private int solution2(int row, int col, int player) {
+        array[row][col]=player;
+        if(checkRow(row,player,array.length) || checkCol(col,player,array.length)
+            || checkDiagonalLine(array.length,player) || checkBackDiagonalLine(array.length,player)) {
+            return player;
+        }
+        return 0;
+    }
+    private boolean checkRow(int row,int player,int n) {
+        for (int i=0;i<n;i++) {
+            if(array[row][i]!=player) {
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean checkCol(int col,int player,int n) {
+        for (int i=0;i<n;i++) {
+            if(array[i][col]!=player) {
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean checkDiagonalLine(int n,int player) {
+        for (int i=0;i<n;i++) {
+            if(array[i][i]!=player) {
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean checkBackDiagonalLine(int n, int player) {
+        for (int i=0;i<n;i++) {
+            if(array[i][n-1-i]!=player) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+
+
 }
