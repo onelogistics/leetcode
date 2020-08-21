@@ -10,7 +10,7 @@ public class RandomPointerCopy {
     public static void main(String[] args) {
         RandomPointerCopy randomPointerCopy=new RandomPointerCopy();
         Node head=buildSample();
-        Node copyNode = randomPointerCopy.s1(head);
+        Node copyNode = randomPointerCopy.copyRandomList(head);
         while (copyNode!=null) {
             System.out.println(String.format("node:%s,random:%s",copyNode.val,copyNode.random==null?"null":copyNode.random.val));
             copyNode=copyNode.next;
