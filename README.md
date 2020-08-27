@@ -55,6 +55,9 @@
     -  [P0:二叉树遍历](src/main/java/basic/tree/TraverseOrder.java)
 - 系统设计
     -  [P0:短URL算法](src/main/java/system/design/Codec.java)
+- 滑动窗口
+    -  [P0:最大子数组之和为K](src/main/java/basic/slidingWindow/MaxSubArrayLenEqualsK.java)
+    
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
