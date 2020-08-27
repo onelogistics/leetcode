@@ -36,7 +36,7 @@ public class Codec {
     private String randomShortUrl() {
         StringBuilder sb=new StringBuilder();
         for (int i=0;i<6;i++) {
-            sb.append(charset.charAt(random.nextInt(charset.length()));
+            sb.append(charset.charAt(random.nextInt(charset.length())));
         }
         return sb.toString();
     }
