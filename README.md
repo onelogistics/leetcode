@@ -57,7 +57,7 @@
     -  [P0:短URL算法](src/main/java/system/design/Codec.java)
 - 滑动窗口
     -  [P0:最大子数组之和为K](src/main/java/basic/slidingWindow/MaxSubArrayLenEqualsK.java)
-    
+    -  [leetcode340 最多有K个不同字符的最长子串](src/main/java/basic/slidingWindow/LengthOfLongestSubstringKDistinct.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
