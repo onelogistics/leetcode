@@ -3,7 +3,7 @@ package basic.slidingWindow;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+/**https://www.cnblogs.com/grandyang/p/5351347.html
  * 输入一个string数组和一个指定值K，找出最多有k个不同字符的最长子串
  *Example 1:
  *
