@@ -17,6 +17,9 @@ import java.util.Map;
  * Explanation: T is "aa" which its length is 2.
  */
 public class LengthOfLongestSubstringKDistinct {
+    public static void main(String[] args) {
+
+    }
     /**
      * 基本思路：使用map存储每个字符及其出现的次数，使用指针left指向子串最左边的位置
      * 遍历字符串，分别将每个字符及其次数存储，同时判断map的元素数量是否大于k
@@ -48,6 +51,32 @@ public class LengthOfLongestSubstringKDistinct {
         }
         return result;
     }
+
+    /**
+     * 解法2：遍历s，在map中存入每个元素和其最新的下标
+     * 当map中的元素个数大于k时，从左边开始滑动窗口，如果当前元素在map中的映射值刚好等于下标
+     * 则说明此元素已经是最新的一个了，所以直接删除即可，否则则说明右边还有相同字符串，需要跳过
+     * @param s
+     * @param k
+     * @return
+     */
+    public int solutionUseMapByIndex(String s,int k) {
+        Map<Character,Integer> map = new HashMap<>();
+        int left=0;
+        int result=0;
+        for (int i=0;i<s.length();i++) {
+            map.put(s.charAt(i),i);
+            while (map.size()>k) {
+                if(map.get(s.charAt(left))==left) {
+                    map.remove(s.charAt(left));
+                }
+                left++;
+                result=Math.max(result,i-left+1);
+            }
+        }
+        return result;
+    }
+
 
     /**
      * 难度升级，返回最长子串，而不仅仅是长度
