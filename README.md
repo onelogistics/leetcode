@@ -59,6 +59,8 @@
     -  [P0:最大子数组之和为K](src/main/java/basic/slidingWindow/MaxSubArrayLenEqualsK.java)
     -  [leetcode340 最多有K个不同字符的最长子串](src/main/java/basic/slidingWindow/LengthOfLongestSubstringKDistinct.java)
     -  [leetcode904 Fruit Into Baskets](src/main/java/basic/slidingWindow/TotalFruit.java)
+    -  [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
+    -  [leetcode424 Fruit Into Baskets](src/main/java/basic/slidingWindow/CharacterReplacement.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)

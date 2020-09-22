@@ -58,4 +58,28 @@ public class LengthOfLongestSubstring {
         }
         return ans;
     }
+
+    /**
+     * 利用滑动窗口求解
+     * @param s
+     * @return
+     */
+    public int solution3(String s) {
+        if (s == null || s.isEmpty()) return 0;
+        char[] sArr = s.toCharArray();
+        int[] hash = new int[128];
+        int left = 0, result = 0;
+        for (int right = 0; right < sArr.length; right++) {
+            // 如果当前遍历到的字符从未出现过，那么直接扩大右边界
+            hash[sArr[right]]++;
+            // 如果当前遍历到的字符出现过，则缩小窗口（左指针向右移动），注意这个地方要用循环，左指针不停右移，直到sArr[right]没再重复出现为止
+            while (hash[sArr[right]] != 1) {
+                hash[sArr[left]]--;
+                left++;
+            }
+            // 更新结果
+            result = Math.max(result, right - left + 1);
+        }
+        return result;
+    }
 }
