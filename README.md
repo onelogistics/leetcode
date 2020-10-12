@@ -64,6 +64,7 @@
     -  [leetcode438 medium 寻找同位异构词的下标](src/main/java/basic/slidingWindow/FindAnagrams.java)
     -  [leetcode992 hard 有K个不重复元素的子数组个数](src/main/java/basic/slidingWindow/SubarraysWithKDistinct.java)
     -  [leetcode480 hard 求滑动窗口的中值](src/main/java/basic/slidingWindow/MedianSlidingWindow.java)
+    -  [leetcode219 easy 相邻重复元素的距离差不大于K](src/main/java/basic/slidingWindow/ContainsNearbyDuplicate.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
