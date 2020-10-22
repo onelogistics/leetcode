@@ -68,7 +68,11 @@
 - 双指针
     -  [leetcode11 medium 盛水最多的容器](src/main/java/basic/doublePointer/MaxArea.java)
     -  [kSum问题](src/main/java/basic/doublePointer/SumProblem.java)
-    
+    -  [leetcode345 翻转元音字符](src/main/java/basic/doublePointer/ReverseVowels.java)
+    -  [leetcode680 验证回文数](src/main/java/basic/doublePointer/ValidPalindrome.java)
+    -  [leetcode82&83 删除链表中的重复元素](src/main/java/basic/doublePointer/DeleteDuplicatesFromListNode.java)
+    -  [leetcode26&80 删除数组中的重复元素](src/main/java/basic/doublePointer/RemoveDuplicatesFormArray.java)
+    -  [leetcode143 medium 链表重排序](src/main/java/basic/doublePointer/ReorderList.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
