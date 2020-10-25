@@ -62,6 +62,7 @@
     -  [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
     -  [leetcode424 Fruit Into Baskets](src/main/java/basic/slidingWindow/CharacterReplacement.java)
     -  [leetcode438 medium 寻找同位异构词的下标](src/main/java/basic/slidingWindow/FindAnagrams.java)
+    -  [leetcode713 medium 元素之积小于K的连续子数组个数](src/main/java/basic/slidingWindow/NumSubArrayProductLessThanK.java)
     -  [leetcode992 hard 有K个不重复元素的子数组个数](src/main/java/basic/slidingWindow/SubarraysWithKDistinct.java)
     -  [leetcode480 hard 求滑动窗口的中值](src/main/java/basic/slidingWindow/MedianSlidingWindow.java)
     -  [leetcode219 easy 相邻重复元素的距离差不大于K](src/main/java/basic/slidingWindow/ContainsNearbyDuplicate.java)
@@ -72,7 +73,12 @@
     -  [leetcode680 验证回文数](src/main/java/basic/doublePointer/ValidPalindrome.java)
     -  [leetcode82&83 删除链表中的重复元素](src/main/java/basic/doublePointer/DeleteDuplicatesFromListNode.java)
     -  [leetcode26&80 删除数组中的重复元素](src/main/java/basic/doublePointer/RemoveDuplicatesFormArray.java)
-    -  [leetcode143 medium 链表重排序](src/main/java/basic/doublePointer/ReorderList.java)
+    -  [P0:leetcode143 medium 链表重排序](src/main/java/basic/doublePointer/ReorderList.java)
+    -  [leetcode75 只有0,1,2三个元素的有限排序](src/main/java/basic/doublePointer/SortColors.java)
+    -  [leetcode202 快乐数](src/main/java/basic/doublePointer/HappyNumber.java)
+- 区间合并
+    -  [leetcode56 medium 合并重叠区间](src/main/java/basic/mergeIntervals/MergeIntervals.java)
+    -  [leetcode57 medium 插入有序区间](src/main/java/basic/mergeIntervals/InsertIntervals.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
@@ -87,7 +93,6 @@
         >![递归树](src/main/resources/permute_tree.jpg)
     - [反转int](src/main/java/leetcode/ReverseInt.java)
     - [反转String](src/main/java/leetcode/ReverseString.java)
-    - [leetcode75 只有0,1,2三个元素的有限排序](src/main/java/leetcode/ShopeeInterView.java)
     - [leetcode348 判定井字棋胜负](src/main/java/leetcode/TicTacToe.java)
 
 - 其他问题
