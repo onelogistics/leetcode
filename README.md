@@ -79,6 +79,7 @@
 - 区间合并
     -  [leetcode56 medium 合并重叠区间](src/main/java/basic/mergeIntervals/MergeIntervals.java)
     -  [leetcode57 medium 插入有序区间](src/main/java/basic/mergeIntervals/InsertIntervals.java)
+    -  [leetcode986 medium 两个区间列表中交叉的区间](src/main/java/basic/mergeIntervals/IntervalListIntersection.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
