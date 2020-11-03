@@ -6,6 +6,8 @@
     - [最长公共子串](src/main/java/basic/dynamic/LongestCommonSubString.java)
     - [最长公共子序列](src/main/java/basic/dynamic/LongestCommonSubsequence.java)
     - [leetcode5 最长回文字符串](src/main/java/basic/dynamic/LongestPalindrome.java)
+    - [求杨辉三角的最短路径](src/main/java/basic/dynamic/YangHuiTriangle.java)
+    - [P0 leetcode97 交织字符串](src/main/java/basic/dynamic/InterleavingString.java)
 - 贪心算法
     - [leetcode321 生成最大的数](src/main/java/basic/greedy/CreateMaxNumber.java)
     - [leetcode134 加油站](src/main/java/basic/greedy/GasStation.java)
@@ -76,6 +78,7 @@
     -  [P0:leetcode143 medium 链表重排序](src/main/java/basic/doublePointer/ReorderList.java)
     -  [leetcode75 只有0,1,2三个元素的有限排序](src/main/java/basic/doublePointer/SortColors.java)
     -  [leetcode202 快乐数](src/main/java/basic/doublePointer/HappyNumber.java)
+    -  [P9:leetcode349 easy 两个数组的交集](src/main/java/basic/doublePointer/IntersectionOfTwoArrays.java)
 - 区间合并
     -  [leetcode56 medium 合并重叠区间](src/main/java/basic/mergeIntervals/MergeIntervals.java)
     -  [leetcode57 medium 插入有序区间](src/main/java/basic/mergeIntervals/InsertIntervals.java)
