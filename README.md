@@ -1,3 +1,4 @@
+- [常见算法类型介绍](https://www.zhihu.com/question/36738189/answer/908664455)
 - 动态规划算法
     - [背包问题](src/main/java/basic/dynamic/BackPack.java)
     - [硬币找零问题](src/main/java/basic/dynamic/CoinChange.java)
@@ -83,14 +84,17 @@
     -  [leetcode56 medium 合并重叠区间](src/main/java/basic/mergeIntervals/MergeIntervals.java)
     -  [leetcode57 medium 插入有序区间](src/main/java/basic/mergeIntervals/InsertIntervals.java)
     -  [leetcode986 medium 两个区间列表中交叉的区间](src/main/java/basic/mergeIntervals/IntervalListIntersection.java)
+    -  [leetcode715 Hard 设计一个区间模块类](src/main/java/basic/mergeIntervals/RangeModule.java)
+- 循环排序: 用来处理数组中的数值限定在一定区间内的问题，典型的如寻找丢失数
+    - [P0:leetcode42 第一个缺失的正整数](src/main/java/basic/cyclicSort/FirstMissingPositive.java)
+    - [leetcode268 缺失的数字](src/main/java/basic/cyclicSort/MissingNumber.java)
+    - [leetcode448 求所有缺失的数字](src/main/java/basic/cyclicSort/FindDisappearedNumbers.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)
     - [P0:leetcode215 数组中第k大的元素](src/main/java/leetcode/FindKthLargest.java)
-    - [P0:leetcode42 第一个缺失的正整数](src/main/java/leetcode/FirstMissingPositive.java)
     - [判断A是否是B的子域名](src/main/java/leetcode/IsSubdomain.java)
     - [LRUCache](src/main/java/leetcode/LRUCache.java)
-    - [leetcode268 缺失的数字](src/main/java/leetcode/MissingNumber.java)
     - [leetcode8 String转int](src/main/java/leetcode/MyAtoi.java)
     - [繁琐版String转int](src/main/java/leetcode/ParseInt.java)
     - [leetcode46 一个数组的全排列组合](src/main/java/leetcode/Permute.java)

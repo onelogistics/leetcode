@@ -1,4 +1,4 @@
-package leetcode;
+package basic.cyclicSort;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,9 +40,10 @@ public class FirstMissingPositive {
             //数组未越界且数组需要交换到相应下标位置
             //每个元素只会被移动到正确的位置一次，因此这个for循环的时间复杂度是O(n+n)
             if (nums[i] > 0 && nums[i] <= nums.length && nums[i] != nums[nums[i] - 1]) {
-                int index = nums[i];
-                nums[i] = nums[index - 1];
-                nums[index - 1] = index;
+                //暂存临时值，交换元素
+                int temp = nums[i];
+                nums[i] = nums[temp - 1];
+                nums[temp - 1] = temp;
             } else {
                 //当前位置的值已放到正确位置或者越出了范围
                 i++;
