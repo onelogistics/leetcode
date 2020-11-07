@@ -89,6 +89,7 @@
     - [P0:leetcode42 第一个缺失的正整数](src/main/java/basic/cyclicSort/FirstMissingPositive.java)
     - [leetcode268 缺失的数字](src/main/java/basic/cyclicSort/MissingNumber.java)
     - [leetcode448 求所有缺失的数字](src/main/java/basic/cyclicSort/FindDisappearedNumbers.java)
+    - [leetcode287 寻找重复元素](src/main/java/basic/cyclicSort/FindDuplicateNumber.java)
 - leetcode   
     - [P0:大数相加](src/main/java/leetcode/AddTwoNumber.java)
     - [大数相加链表版](src/main/java/leetcode/AddTwoLinkedList.java)

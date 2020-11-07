@@ -4,7 +4,21 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-/**二分查找有几种写法？它们的区别是什么？ - labuladong的回答 - 知乎
+/**二分查找的几个常见难点：右下标的初始化值，循环判断条件的确定，left和right指针的下一次迭代值，‘
+ * 目前有两种常见求目标值的做法：
+ *
+ * 1、right初始化为nums.length,此时我们搜索的是一个左闭右开区间[left，right)，因此我们的循环判断条件时
+ * while(left < right), 对应的终止条件时left=right, 而当搜索完mid之后，我们接下来应该搜索[left,mid)和
+ * [mid+1,right)区间，因此left和right的下一次迭代值分别为left = mid+1, right=mid
+ *
+ * 2、right初始化为nums.length-1,此时我们搜索的是一个左闭右闭区间[left,right]，因此我们下一次的循环判断条件时
+ * while(left<=right),对应的终止条件是left>right, 对应下一次迭代时应该搜索[left,mid-1],[mid+1,right]
+ * 也就是下一次迭代时分别为left=mid+1,right=mid-1
+ *
+ *
+ *
+ *
+ * 二分查找有几种写法？它们的区别是什么？ - labuladong的回答 - 知乎
  https://www.zhihu.com/question/36132386/answer/712269942
  * 34. Find First and Last Position of Element in Sorted Array
  * Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
@@ -20,9 +34,14 @@ import java.util.Arrays;
  * @date 2020/2/2 18:14
  */
 public class SearchRange {
+    static  SearchRange searchRange=new SearchRange();
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new SearchRange().searchRange(new int[]{1, 1, 2, 2, 2, 3, 4, 5}, 0)));
-        System.out.println(Arrays.toString(new SearchRange().searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8)));
+        int[] array1=new int[]{1, 1, 2, 2, 2, 3, 4, 5};
+        int[] arrays2=new int[]{5, 7, 7, 8, 8, 10};
+        System.out.println(Arrays.toString(new SearchRange().searchRange(array1, 0)));
+        System.out.println(Arrays.toString(new SearchRange().searchRange(arrays2, 8)));
+        System.out.println(searchRange.searchLeftBound(array1,0));
+        System.out.println(searchRange.searchRightBound(array1,0));
     }
     @Test
     public void test() {
@@ -89,5 +108,45 @@ public class SearchRange {
             }
         }
         return -1;
+    }
+
+    /**
+     * 搜寻目标值的左边界,如果目标值不存在，返回-1
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int searchLeftBound(int[] nums, int target) {
+        int left=0, right=nums.length;
+        while (left< right) {
+            int mid=left+(right-left)/2;
+            if(target>nums[mid]) {
+                left=mid+1;
+            }else if(target<nums[mid]) {
+                right=mid;
+            }else {
+                right=mid;
+            }
+        }
+        return target == nums[left] ? left : -1;
+    }
+
+    /**
+     * 寻找目标值的右边界
+     * @return
+     */
+    public int searchRightBound(int[] nums, int target) {
+        int left=0, right=nums.length;
+        while (left< right) {
+            int mid = left + (right - left) / 2;
+            if(target>nums[mid]) {
+                left=mid+1;
+            }else if(target<nums[mid]) {
+                right=mid;
+            }else {
+                left=mid+1;
+            }
+        }
+        return left-1;
     }
 }
