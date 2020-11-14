@@ -93,4 +93,26 @@ public class RevertLinkedList {
         }
         return dummy.next;
     }
+
+    /**
+     * 反转前k个节点
+     * k有可能超出链表长度
+     * @param head
+     * @param k
+     * @return
+     */
+    public static ListNode revertFirstK(ListNode head, int k) {
+        if(head == null || head.next == null) return head;
+        //每次反转之后的新head
+        ListNode newHead = head;
+        //不断把cur指向的节点移到最前面
+        ListNode cur = head.next;
+        for (int i=1; i<k && cur!=null ; i++) {
+            head.next=cur.next;
+            cur.next=newHead;
+            newHead=cur;
+            cur=head.next;
+        }
+        return newHead;
+    }
 }
