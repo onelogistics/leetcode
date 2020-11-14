@@ -180,4 +180,39 @@ public class TraverseOrder {
         leverOrderRecursion(root.left, ans, level + 1);
         leverOrderRecursion(root.right, ans, level + 1);
     }
+    /**
+     * 之字形层次遍历
+     * 103. Binary Tree Zigzag Level Order Traversal
+     * Given binary tree [3,9,20,null,null,15,7],
+     *     3
+     *    / \
+     *   9  20
+     *     /  \
+     *    15   7
+     * return its zigzag level order traversal as:
+     * [
+     *   [3],
+     *   [20,9],
+     *   [15,7]
+     * ]
+     */
+    public static List<List<Integer>> levelOrderRecursionZigzag(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        levelOrderRecursionZigzag(root,result,0);
+        return result;
+    }
+    private static void levelOrderRecursionZigzag(TreeNode root, List<List<Integer>> result, int level) {
+        if(root == null) return;
+        if(result.size() == level) {
+            result.add(new LinkedList<>());
+        }
+        // 正向遍历
+        if(level%2 == 0) {
+            ((LinkedList)result.get(level)).add(root.val);
+        }else {
+            ((LinkedList)result.get(level)).addFirst(root.val);
+        }
+        levelOrderRecursionZigzag(root.left, result, level+1);
+        levelOrderRecursionZigzag(root.right, result, level+1);
+    }
 }
