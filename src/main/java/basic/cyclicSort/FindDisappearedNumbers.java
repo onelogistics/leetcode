@@ -21,6 +21,7 @@ public class FindDisappearedNumbers {
     }
     /**
      * 基本思想，建立 i+1 = nums[i]的映射关系，重复的元素直接不动
+     * 时间复杂度：O(N)
      * @param nums
      * @return
      */
@@ -47,6 +48,7 @@ public class FindDisappearedNumbers {
     /**
      * 基本思路：数组中的元素都在[1,n]范围内，目的是找出所有缺失的数字
      * 那我们可以标记出所以已经出现过的数字，然后遍历数组，没有被标记的数字下标，就是缺失的
+     * 时间复杂度：O(N)
      * @param nums
      * @return
      */
