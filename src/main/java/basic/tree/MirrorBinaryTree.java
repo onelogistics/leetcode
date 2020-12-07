@@ -9,7 +9,7 @@ import java.util.Queue;
  */
 public class MirrorBinaryTree {
     public static void main(String[] args) {
-        TreeNode treeNode = TreeNode.reConstructor(new int[]{1, 2, 4, 7, 3, 5, 6, 8}, new int[]{4, 7, 2, 1, 5, 3, 8, 6});
+        TreeNode treeNode = ConstructorTreeNode.reConstructorWithPreAndMid(new int[]{1, 2, 4, 7, 3, 5, 6, 8}, new int[]{4, 7, 2, 1, 5, 3, 8, 6});
         TreeNode mirror = solution(treeNode);
         solution2(treeNode);
         System.out.println();

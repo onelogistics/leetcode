@@ -13,7 +13,7 @@ package basic.tree;
 public class MaxPathSum {
     int maxSum;
     public static void main(String[] args) {
-        TreeNode root2 = TreeNode.reConstructor(new int[]{-10, 2, -2, -3, 6, -4, 5}, new int[]{-2, 2, -3, -10, -4, 6, 5});
+        TreeNode root2 = ConstructorTreeNode.reConstructorWithPreAndMid(new int[]{-10, 2, -2, -3, 6, -4, 5}, new int[]{-2, 2, -3, -10, -4, 6, 5});
         System.out.println(new MaxPathSum().solution(root2));
     }
     //递归解法

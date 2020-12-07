@@ -15,8 +15,8 @@ public class DiameterOfBinaryTree {
     int ans;
 
     public static void main(String[] args) {
-        TreeNode root1 = TreeNode.reConstructor(new int[]{2, 3, 5, 4}, new int[]{5, 3, 2, 4});
-        TreeNode root2 = TreeNode.reConstructor(new int[]{4,-7,2,3,5,7,6,4,7,9,8}, new int[]{-7,4,7,5,3,6,2,9,7,4,8});
+        TreeNode root1 = ConstructorTreeNode.reConstructorWithPreAndMid(new int[]{2, 3, 5, 4}, new int[]{5, 3, 2, 4});
+        TreeNode root2 = ConstructorTreeNode.reConstructorWithPreAndMid(new int[]{4,-7,2,3,5,7,6,4,7,9,8}, new int[]{-7,4,7,5,3,6,2,9,7,4,8});
         DiameterOfBinaryTree diameterOfBinaryTree1 =new DiameterOfBinaryTree();
         System.out.println(diameterOfBinaryTree1.diameterOfBinaryTree(root1));
         System.out.println(diameterOfBinaryTree1.diameterOfBinaryTree(root2));

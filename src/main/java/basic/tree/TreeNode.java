@@ -16,27 +16,12 @@ public class TreeNode {
         this.val = val;
     }
 
-    /**
-     * 利用前序数组和中序数组重建二叉树
-     *
-     * @param pre
-     * @param mid
-     * @return
-     */
-    public static TreeNode reConstructor(int[] pre, int[] mid) {
-        if (pre.length == 0 || mid.length == 0) {
-            return null;
-        }
-        TreeNode root = new TreeNode(pre[0]);
-        for (int i = 0; i < mid.length; i++) {
-            if (pre[0] == mid[i]) {
-                root.left = reConstructor(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(mid, 0, i));
-                root.right = reConstructor(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(mid, i + 1, mid.length));
-                break;
-            }
-        }
-        return root;
+    @Override
+    public String toString() {
+        List<List<Integer>> ans = TraverseOrder.leverOrderRecursion(this);
+        return Arrays.deepToString(ans.toArray());
     }
+
 
 
 
@@ -139,7 +124,7 @@ public class TreeNode {
 
     public static void main(String[] args) {
         //1,2,3,4,5,null,7
-        TreeNode treeNode=TreeNode.reConstructor(new int[]{1,2,4,5,3,7},new int[]{4,2,5,1,3,7});
+        TreeNode treeNode=ConstructorTreeNode.reConstructorWithPreAndMid(new int[]{1,2,4,5,3,7},new int[]{4,2,5,1,3,7});
         System.out.println(NumOfKLevelTreeNode(treeNode,3));
         System.out.println(NumOfKLevelTreeNodeBFS(treeNode,3));
         System.out.println(Arrays.toString(kLevelTreeNodeIterator(treeNode,3).toArray()));

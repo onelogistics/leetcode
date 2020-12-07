@@ -4,6 +4,12 @@ import basic.linkedList.ListNode;
 
 
 public class DeleteDuplicatesFromListNode {
+    private static DeleteDuplicatesFromListNode deleteDuplicatesFromListNode = new DeleteDuplicatesFromListNode();
+
+    public static void main(String[] args) {
+        ListNode head = ListNode.getListNodes(1,1,1,2,3);
+        System.out.println(deleteDuplicatesFromListNode.deleteDuplicates2(head).toString());
+    }
     /**
      * leetcode82   Remove Duplicates from Sorted List II
      * <p>
@@ -24,18 +30,19 @@ public class DeleteDuplicatesFromListNode {
         ListNode pre = dummy;
         ListNode cur = head;
         while (cur != null) {
-            //一直循环，直到找到最后一个重复的元素
+            boolean isDuplicate =false;
+            //不断删除重复元素，while循环结束时只保留一个元素
             while (cur.next!=null && cur.val == cur.next.val) {
-                cur = cur.next;
+                cur.next = cur.next.next;
+                isDuplicate =true;
             }
-            //如果当前的cur是个distinct元素，pre移动一位即可
-            if(pre.next == cur) {
+            //如果本轮迭代中出现过重复元素，跳过重复元素
+            if(isDuplicate) {
+                pre.next=pre.next.next;
+            }else {
                 pre=pre.next;
-            }else { //如果当前的cur是个duplicate元素，pre需要取cur的下一位
-                pre=cur.next;
             }
-            //移动cur到下一个元素
-            cur=cur.next;
+            cur=pre.next;
         }
         return dummy.next;
     }
