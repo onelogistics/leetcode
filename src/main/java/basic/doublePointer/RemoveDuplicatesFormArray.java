@@ -1,7 +1,8 @@
 package basic.doublePointer;
 
 /**
- * leetcode26 && leetcode80
+ * leetcode26 https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ * leetcode80 https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
  */
 public class RemoveDuplicatesFormArray {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class RemoveDuplicatesFormArray {
 
     /**
      * 26. Remove Duplicates from Sorted Array
-     * 给定一个数组，原地删除重复元素，保证每个元素只出现一次并返回新的数组长度
+     * 给定一个有序数组，原地删除重复元素，保证每个元素只出现一次并返回新的数组长度
      * Example 1:
      * <p>
      * Input: nums = [1,1,2]
@@ -27,6 +28,14 @@ public class RemoveDuplicatesFormArray {
      * @return
      */
     public int removeDuplicates(int[] nums) {
+        int i=0;
+        for (int n: nums) {
+            if(i<1 || n > nums[i-1]) {
+                nums[i++]=n;
+            }
+        }
+        return i;
+       /* 解法2
         if (nums == null) return 0;
         if (nums.length <= 1) return nums.length;
         int d = 1;
@@ -35,7 +44,7 @@ public class RemoveDuplicatesFormArray {
                 nums[d++] = nums[i];
             }
         }
-        return d;
+        return d;*/
     }
 
     /**
@@ -43,14 +52,16 @@ public class RemoveDuplicatesFormArray {
      * 给定一个有序数组，去除多余元素，使得其中的每个元素最多出现两次
      * Example 1:
      * <p>
-     * Given nums = [1,1,1,2,2,3],
+     * Input: nums = [1,1,1,2,2,3],
+     * Output:5
      * <p>
      * Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
      * <p>
      * It doesn't matter what you leave beyond the returned length.
      * Example 2:
      * <p>
-     * Given nums = [0,0,1,1,1,1,2,3,3],
+     * Input: nums = [0,0,1,1,1,1,2,3,3],
+     * OutPut: 7
      * <p>
      * Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.
      * <p>
@@ -62,7 +73,7 @@ public class RemoveDuplicatesFormArray {
     public int removeDuplicates2(int[] nums) {
         int i = 0;
         for (int n : nums) {
-            //n > nums[i - 2],如果连续有三个以上的重复元素，则不会进入到此循环中，因此可以保证i左侧的元素都是满足条件的。
+            //n > nums[i - 2],如果连续有三个以上的重复元素，则第三个及以后的重复元素不会进入到此循环中，因此可以保证i左侧的元素都是满足条件的。
             if (i < 2 || n > nums[i - 2]) {
                 nums[i++] = n;
             }

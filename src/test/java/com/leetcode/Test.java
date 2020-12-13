@@ -10,10 +10,50 @@ import java.util.List;
  */
 public class Test {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(0,1);
-        list.add(0,2);
-        list.add(2,3);
-        System.out.println(Arrays.toString(list.toArray()));
+        System.out.println(stoneGameVII(new int[]{7,90,5,1,100,10,10,2}));
+    }
+    public static int stoneGameVII(int[] stones) {
+        int AliceScore = 0;
+        int BobScore = 0;
+        int left = 0;
+        int right = stones.length-1;
+        boolean FirstRace = true;
+        int sum=0;
+        for(int i=0;i<stones.length;i++) {
+            sum+=stones[i];
+        }
+        while(left+1 < right) {
+            if(FirstRace) {
+                if(stones[left]< stones[right]) {
+                    sum=sum-stones[left];
+                    AliceScore+=sum;
+                    left++;
+                }else {
+                    sum=sum-stones[right];
+                    AliceScore+=sum;
+                    right--;
+                }
+            }else {
+                if(stones[left]< stones[right]) {
+                    sum=sum-stones[right];
+                    BobScore+=sum;
+                    right--;
+                }else {
+                    sum=sum-stones[left];
+                    BobScore+=sum;
+                    left++;
+                }
+            }
+            FirstRace = !FirstRace;
+        }
+        if(right == left+1) {
+            if(FirstRace) {
+                AliceScore += Math.max(stones[left],stones[right]);
+            }else {
+                BobScore += Math.max(stones[left],stones[right]);
+            }
+        }
+        return AliceScore-BobScore;
+
     }
 }

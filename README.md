@@ -9,6 +9,9 @@
     - [leetcode5 最长回文字符串](src/main/java/basic/dynamic/LongestPalindrome.java)
     - [求杨辉三角的最短路径](src/main/java/basic/dynamic/YangHuiTriangle.java)
     - [P0 leetcode97 交织字符串](src/main/java/basic/dynamic/InterleavingString.java)
+    - [leetcode5627 石头游戏五 决策类](src/main/java/basic/dynamic/StoneGameVII.java)
+    - [leetcode486 预测胜利者 决策类](src/main/java/basic/dynamic/PredictTheWinner.java)
+    - [leetcode1691 堆叠长方体的最大高度](src/main/java/basic/dynamic/MaxHeight.java)
 - 贪心算法
     - [leetcode321 生成最大的数](src/main/java/basic/greedy/CreateMaxNumber.java)
     - [leetcode134 加油站](src/main/java/basic/greedy/GasStation.java)

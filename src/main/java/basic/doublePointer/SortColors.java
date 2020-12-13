@@ -3,6 +3,7 @@ package basic.doublePointer;
 import java.util.Arrays;
 
 /**leetcode 75
+ * 输入数组中的元素只可能是0，1,2，要求正序排序，空间复杂度O(1)，时间复杂度fastest
  * @author JunjunYang
  * @date 2019/12/15 9:15
  */
@@ -17,6 +18,8 @@ public class SortColors {
         int second=nums.length-1;
         int zero=0;
         for (int i=zero;i<=second;i++) {
+            //不能调换两个while的顺序，因为是从左到右遍历，假设第一个while交换完之后，num[i]=0，正好可以用第二个while来处理，第二个while交换归来的num[i]不是0就是1
+            //但如果调换顺序，第二个while交换过来的nums[i]=0,就无法处理了，直接被跳过了。
             while (nums[i]==2 && i<second) swap(nums,i,second--);
             while (nums[i]==0 && i>zero) swap(nums,i,zero++);
         }

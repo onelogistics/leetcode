@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * https://leetcode.com/problems/intersection-of-two-arrays/
+ * 找出两个数组的交集
  * 349. Intersection of Two Arrays
  * Given two arrays, write a function to compute their intersection.
  *
@@ -22,7 +24,8 @@ import java.util.Set;
  * The result can be in any order.
  */
 public class IntersectionOfTwoArrays {
-    /**
+
+    /**时间复杂度O(N)
      * 使用hashset的解法
      * @param nums1
      * @param nums2
@@ -48,6 +51,7 @@ public class IntersectionOfTwoArrays {
     }
 
     /**
+     * 时间复杂度O（N*logN）
      * 双指针解法
      * @param nums1
      * @param nums2
@@ -76,4 +80,50 @@ public class IntersectionOfTwoArrays {
         }
         return ans;
     }
+
+    /**
+     * 二分搜索解法
+     * 时间复杂度O(N*logN)
+     * @param nums1
+     * @param nums2
+     * @return
+     */
+    public int[] intersection3(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Set<Integer> set=new HashSet<>();
+        for (int num: nums2) {
+            if(binarySearch(nums1,num)) {
+                set.add(num);
+            }
+        }
+        int[] ans = new int[set.size()];
+        int i=0;
+        for (int n: set) {
+            ans[i++]=n;
+        }
+        return ans;
+    }
+
+    /**
+     * 查找target是否在nums中出现过，出现过返回true，未出现过返回false
+     * @param nums
+     * @param target
+     * @return
+     */
+    public boolean binarySearch(int[] nums, int target) {
+        int lo=0;
+        int ho=nums.length;
+        while (lo < ho) {
+            int mid = lo + (ho-lo)/2;
+            if(nums[mid] == target) {
+                return true;
+            }else if(nums[mid]<target) {
+                lo=mid+1;
+            }else {
+                ho=mid;
+            }
+        }
+        return false;
+    }
+
 }

@@ -176,6 +176,7 @@ public class SumProblem {
 
     public List<List<Integer>> kSum(int[] nums, int target, int k, int index) {
         List<List<Integer>> ans = new ArrayList<>();
+        // index已经到了数组最后一位 || 最小的数都大于target || 最大的数都小于target
         if (index == nums.length || nums[index] * k > target || nums[nums.length - 1] * k < target) {
             return ans;
         }
@@ -183,7 +184,7 @@ public class SumProblem {
         if (k == 2) {
             return twoSum(nums, target, index);
         }
-        //从index处开始遍历
+        //从index处开始遍历,截至到nums.length - k + 1即可
         for (int i = index; i < nums.length - k + 1; i++) {
             if (i == index  || (nums[i] != nums[i - 1])) {
                 List<List<Integer>> list = kSum(nums, target - nums[i], k - 1, i + 1);

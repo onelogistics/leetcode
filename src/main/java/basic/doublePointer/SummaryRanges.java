@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
+/**https://leetcode.com/problems/summary-ranges/
  * 228. Summary Ranges
  * 给定一个有序且不重复的数组nums
  * 返回最小的有序范围list，这个有序范围list需要精确的覆盖所有元素
@@ -58,7 +58,6 @@ public class SummaryRanges {
      * @param nums
      * @return
      */
-    //todo 这种解法边界条件难以处理，代码繁琐，只使用一个指针好处理
     public List<String> summaryRanges1(int[] nums) {
         if (nums.length == 0) return new ArrayList<>();
         if (nums.length == 1) return Arrays.asList(String.valueOf(nums[0]));
@@ -67,6 +66,7 @@ public class SummaryRanges {
         int head = 0;
         int tail;
         for (tail = 0; tail < nums.length - 1; tail++) {
+            //断掉了，不连续了
             if (nums[tail] + 1 != nums[tail + 1]) {
                 if (nums[head] == nums[tail]) {
                     ans.add(String.valueOf(nums[head]));
