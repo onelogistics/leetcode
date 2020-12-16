@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 /**
  * 背包问题
+ * 背包问题大的可以分为三类，它们的共性是需要注意动态数组的初始化和大小，需要初始化为new int[w.length+1][K+1]
+ * 这是因为把第0件物品也算进去了。
+ * 1. 01背包问题，要求一个物品要么使用一次，要么不用，需要注意的一点是，如果要求背包必须装满，那么在初始化动态数组时，除了dp[0][0],dp[0][i]都
+ * 需要被初始化为Integer.MIN_VALUE.
+ * 2. 完全背包问题，不限制物品使用次数，一个物品可以使用多次，相比01背包的区别是，在最内层加一个使用次数k的循环，使用k*w[i-1]<=j作为终止条件
+ * 3. 多重背包问题，每个物品都有自己的限制使用次数m[i],相比完全背包，多了使用次数m[i]的限制
+ *
  * 参考博客：https://www.cnblogs.com/mfrank/p/10587463.html
  *
  * @author JunjunYang
@@ -68,7 +75,24 @@ public class BackPack {
         }
         return dp[w.length][K];
     }
-
+    /**
+     * 变种1：要求背包恰好装满，此时需要把dp[0][i]，i从1到k的值全赋值为MIN_VALUE,这是因为要求恰好装满时，只有dp[0][0]有解，解为0，而其他的dp[0][i]均得不到解，均处于无解状态，因此赋值为无穷小
+     */
+    public static int backPack01Var1(int[] w, int[] v, int K) {
+        int[][] dp = new int[w.length + 1][K + 1];
+        for (int i = 1; i <= K; i++) dp[0][i] = Integer.MIN_VALUE;
+        for (int i = 1; i <= w.length; i++) {
+            for (int j = 0; j <= K; j++) {
+                //此处w[i-1]才是对应第i个物品的体积，数组v同理
+                if (j < w[i - 1]) {
+                    dp[i][j] = dp[i - 1][j];
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j - w[i - 1]] + v[i - 1], dp[i - 1][j]);
+                }
+            }
+        }
+        return dp[w.length][K];
+    }
     /**
      * 完全背包问题：相较于01背包问题，每个物品可以重复使用多次
      *将多次使用的同一个物品看做一个整体
@@ -162,7 +186,7 @@ public class BackPack {
     public static int backPackLimitNumWithSpaceOptimized(int[] m, int[] w, int[] v, int K) {
         int[] dp = new int[K + 1];
         for (int i = 0; i < w.length; i++) {
-            //此时多重背包问题简化成了完全背包
+            //次数*当前物品的体积已经超出了背包容积K，此时多重背包问题简化成了完全背包
             if (m[i] * w[i] >= K) {
                 for (int j = w[i]; j <= K; j++) {
                     dp[j] = Math.max(dp[j], dp[j - w[i]] + v[i]);
@@ -181,23 +205,5 @@ public class BackPack {
         return dp[K];
     }
 
-    /**
-     * 变种1：要求背包恰好装满，此时需要把dp[0][i]，i从1到k的值全赋值为MIN_VALUE,这是因为要求恰好装满时，只有dp[0][0]有解，解为0，而其他的dp[0][i]均得不到解，均处于无解状态，因此赋值为无穷小
-     */
-    public static int backPack01Var1(int[] w, int[] v, int K) {
-        int[][] dp = new int[w.length + 1][K + 1];
-        for (int i = 1; i <= K; i++) dp[0][i] = Integer.MIN_VALUE;
-        for (int i = 1; i <= w.length; i++) {
-            for (int j = 0; j <= K; j++) {
-                //此处w[i-1]才是对应第i个物品的体积，数组v同理
-                if (j < w[i - 1]) {
-                    dp[i][j] = dp[i - 1][j];
-                } else {
-                    dp[i][j] = Math.max(dp[i - 1][j - w[i - 1]] + v[i - 1], dp[i - 1][j]);
-                }
-            }
-        }
-        return dp[w.length][K];
-    }
 
 }
