@@ -2,10 +2,11 @@ package basic.dynamic;
 
 import java.util.Arrays;
 
-/**
+/**https://leetcode.com/problems/interleaving-string/
  * 97. Interleaving String
  * 给定字符串s1、s2、s3，判断s3是否是s1和s2交织而成的结果
  * 两个字符串的交织被定义为：他们被切割成非空的子串，如下：
+ * s1、t1不一定代表一个字符，可能是多个字符
  * s = s1 + s2 + ... + sn
  * t = t1 + t2 + ... + tm
  * |n - m| <= 1
@@ -30,6 +31,7 @@ import java.util.Arrays;
  * 0 <= s1.length, s2.length <= 100
  * 0 <= s3.length <= 200
  * s1, s2, and s3 consist of lower-case English letters.
+ * 注意：用双指针法并不能找出所有可能符合条件的组合
  */
 public class InterleavingString {
     public static void main(String[] args) {
@@ -38,26 +40,6 @@ public class InterleavingString {
         System.out.println(interleavingString.isInterleave2("aabcc", "dbbca", "aadbbbaccc"));
     }
 
-    /**
-     * 错误解法，用双指针法并不能找出所有可能符合条件的组合
-     * @param s1
-     * @param s2
-     * @param s3
-     * @return
-     */
-    public boolean isInterleaveError(String s1, String s2, String s3) {
-        int i=0,j=0;
-        for (char ch : s3.toCharArray()) {
-            if(i<s1.length() && s1.charAt(i) == ch) {
-                i++;
-            }else if(j<s2.length() && s2.charAt(j) == ch) {
-                j++;
-            }else {
-                return false;
-            }
-        }
-        return true;
-    }
 
     /**
      * 暴力解法

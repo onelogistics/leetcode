@@ -1,4 +1,4 @@
-package basic.dynamic;
+package basic.slidingWindow;
 
 import org.junit.Test;
 
@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * 最长不重复子串的长度 leetcode 3
+ * 给定一个string，找出没有重复元素的最长子串
  * Given a string, find the length of the longest substring without repeating characters.
  * Input: "pwwkew"
  * Output: 3
@@ -70,7 +71,7 @@ public class LengthOfLongestSubstring {
         int[] hash = new int[128];
         int left = 0, result = 0;
         for (int right = 0; right < sArr.length; right++) {
-            // 如果当前遍历到的字符从未出现过，那么直接扩大右边界
+            //直接扩大右边界
             hash[sArr[right]]++;
             // 如果当前遍历到的字符出现过，则缩小窗口（左指针向右移动），注意这个地方要用循环，左指针不停右移，直到sArr[right]没再重复出现为止
             while (hash[sArr[right]] != 1) {
