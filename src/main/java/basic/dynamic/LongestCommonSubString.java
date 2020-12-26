@@ -1,6 +1,6 @@
 package basic.dynamic;
 
-/**
+/**718. Maximum Length of Repeated Subarray
  * 最长公共子串，与子序列类似，不过子序列不要求连续，子串要求连续
  */
 public class LongestCommonSubString {

@@ -57,6 +57,7 @@ public class MaxHeight {
                 return o2[2] - o1[2];
             }
         });
+        //dp[i],前i个长方体，所能得到的最大高度
         int[] dp = new int[cuboids.length];
         int res = 0;
         for (int i = 0; i < cuboids.length; i++) {

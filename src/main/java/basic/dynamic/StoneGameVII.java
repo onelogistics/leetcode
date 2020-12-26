@@ -5,7 +5,7 @@ package basic.dynamic;
  *
  * 石子游戏中，爱丽丝和鲍勃轮流进行自己的回合，爱丽丝先开始 。
  *
- * 有 n 块石子排成一排。每个玩家的回合中，可以从行中 移除 最左边的石头或最右边的石头，并获得与该行中剩余石头值之 和 相等的得分。当没有石头可移除时，得分较高者获胜。
+ * 有 n 块石子排成一排。每个玩家的回合中，可以从行中 移除 最左边的石头或最右边的石头，并获得与该行中剩余石头值之和 相等的得分。当没有石头可移除时，得分较高者获胜。
  *
  * 鲍勃发现他总是输掉游戏（可怜的鲍勃，他总是输），所以他决定尽力 减小得分的差值 。爱丽丝的目标是最大限度地 扩大得分的差值 。
  *
@@ -50,6 +50,27 @@ public class StoneGameVII {
         }
         return dfs(0,stones.length-1,pre,dp);
     }
+    /**
+     * 记忆化深度优先搜索
+     * @param l
+     * @param r
+     * @param pre
+     * @param dp
+     * @return
+     */
+    private int dfs(int l, int r, int[] pre, int[][] dp) {
+        if(l == r) return 0;
+        if(dp[l][r]!=0) return dp[l][r];
+        //pre[r+1]-pre[l+1]为本次Alice先选得到的分数和，dfs(l+1,r,pre,dp)为下次迭代Bob和Alice的最大价值差
+        //这两者之差，即为Alice本轮的最大价值差
+        return dp[l][r] = Math.max(pre[r+1]-pre[l+1]-dfs(l+1,r,pre,dp), pre[r]-pre[l]-dfs(l,r-1,pre,dp));
+    }
+
+    /**
+     * 动态规划
+     * @param stones
+     * @return
+     */
     public int stoneGameVII2(int[] stones) {
         //dp[i][j]代表在本轮中得到的最大价值差
         int[][] dp = new int[stones.length][stones.length];
@@ -66,19 +87,5 @@ public class StoneGameVII {
         }
         return dp[0][stones.length-1];
     }
-    /**
-     * 记忆化深度优先搜索
-     * @param l
-     * @param r
-     * @param pre
-     * @param dp
-     * @return
-     */
-    private int dfs(int l, int r, int[] pre, int[][] dp) {
-        if(l == r) return 0;
-        if(dp[l][r]!=0) return dp[l][r];
-        //pre[r+1]-pre[l+1]为本次Alice先选得到的分数和，dfs(l+1,r,pre,dp)为下次迭代Bob和Alice的最大价值差
-        //这两者之差，即为Alice本轮的最大价值差
-        return dp[l][r] = Math.max(pre[r+1]-pre[l+1]-dfs(l+1,r,pre,dp), pre[r]-pre[l]-dfs(l,r-1,pre,dp));
-    }
+
 }

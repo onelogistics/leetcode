@@ -31,7 +31,13 @@ package basic.dynamic;
 public class PredictTheWinner {
     /**
      * 动态规划解法
-     * dp[i][j]代表当前玩家与另一个玩家在(num[i]...num[j])情况下的最大差值
+     * dp[i][j]代表当前玩家A与另一个玩家B在(num[i]...num[j])情况下的最大差值
+     *  dp[i][j]=Math.max(nums[i]-dp[i+1][j],nums[j]-dp[i][j-1]);
+     *  玩家A与玩家B的最大差值dp[i][j]有两种情况，
+     *  第一种，玩家A取了num[i]的分数，与之对应的玩家B与玩家A的最大差值为dp[i+1][j]，
+     *  此时dp[i][j]=nums[i]-dp[i+1][j];
+     *  第二种类似
+     *  那么dp[i][j]=
      * @param nums
      * @return
      */

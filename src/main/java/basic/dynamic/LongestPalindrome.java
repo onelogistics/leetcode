@@ -9,11 +9,43 @@ package basic.dynamic;
  * Note: "aba" is also a valid answer.
  */
 public class LongestPalindrome {
+    static LongestPalindrome main=new LongestPalindrome();
     //起始位置
     int lo;
     //回文长度
     int maxLen;
 
+    public static void main(String[] args) {
+        System.out.println(main.solution("cbbd"));
+    }
+
+    /**时间复杂度O(N2)
+     * 动态规划解法
+     * dp[i][j]代表s[i]到s[j]的子字符串是否是回文字符串
+     * dp[i][j] == dp[i+1][j-1] && s.charAr(i)==s.charAt(j)
+     *
+     * @param s
+     * @return
+     */
+    public String dynamicPlan(String s) {
+        String ans="";
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for (int i=s.length()-1;i>=0;i--) {
+            for (int j=i;j<s.length();j++) {
+                //j-i<3且s.charAt(i)==s.charAt(j)时也可说明i到j是回文字符串
+                dp[i][j]=s.charAt(i)==s.charAt(j) && (j-i<3 || dp[i+1][j-1]);
+                if(dp[i][j] && j-i+1 > ans.length()) {
+                    ans=s.substring(i,j+1);
+                }
+            }
+        }
+        return ans;
+    }
+    /**
+     * 时间复杂度O(N*N)
+     * @param s
+     * @return
+     */
     public String solution(String s) {
         lo = 0;
         maxLen = 0;
