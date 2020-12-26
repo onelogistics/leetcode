@@ -16,6 +16,17 @@ package basic.greedy;
  *
  */
 public class JumpGame2 {
+    static JumpGame2 jumpGame2=new JumpGame2();
+    public static void main(String[] args) {
+        System.out.println(jumpGame2.solution(new int[]{2, 3, 1, 1, 4}));
+    }
+
+    /**
+     * 每次都以最大步数去跳，不过在跳过的元素中，有可能存在更大的步数
+     * 因此需要不断计算最大步数，并更新end，遇到一次end就说明此前的最大步数已经到头了，需要再跳一次
+     * @param nums
+     * @return
+     */
     public int solution(int[] nums) {
         //最大能抵达的位置
         int maxReach=0;
@@ -23,7 +34,7 @@ public class JumpGame2 {
         int step=0;
         //记录最大可选范围的下标
         int end=0;
-        //因为只要求到达数组最后一个位置，所以是len-1
+        //因为只要求到达数组最后一个位置，所以是len-1，如果写成i<len,则有可能算上从最后一个位置起跳的步数
         for (int i=0;i<nums.length-1;i++) {
             //不断更新可选范围内的能抵达的最远位置
             maxReach=Math.max(maxReach,i+nums[i]);

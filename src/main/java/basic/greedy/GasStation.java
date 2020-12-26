@@ -43,6 +43,9 @@ public class GasStation {
      * Time Complexity:O（N）
      * 1、总油量如果小于总消耗量，则不存在解
      * 2、假设从A点无法到达B点（B点是第一个无法到达的点），那么A和B之间的点肯定也无法到达B点，因为少加了A点的油
+     * 证明：设加油站有A  C  B
+     * A可以抵达C点，但是不能抵达B点，需要证明C肯定也无法抵达B点
+     * 证明过程：反证法，因为A可以抵达C点，那如果C可以抵达B点的话，就说明A可以抵达B点
      * @param gas
      * @param cost
      * @return

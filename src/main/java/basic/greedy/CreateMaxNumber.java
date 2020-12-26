@@ -12,6 +12,14 @@ public class CreateMaxNumber {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(new CreateMaxNumber().maxArray(new int[]{3,1,4,2}, 3)));
     }
+
+    /**
+     * 关键
+     * 栈中元素数量+剩余元素>len 并且 栈顶元素更小时， 可以循环弹出
+     * @param nums
+     * @param len
+     * @return
+     */
     private int[] maxArray(int[] nums, int len) {
         Stack<Integer> stack = new Stack<Integer>();
         for (int i = 0; i < nums.length; i++) {
