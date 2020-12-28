@@ -28,11 +28,15 @@ import java.util.PriorityQueue;
 public class MedianFinder {
     public static void main(String[] args) {
         MedianFinder medianFinder = new MedianFinder();
-        medianFinder.addNum(3);
-        medianFinder.addNum(2);
         medianFinder.addNum(1);
+        medianFinder.addNum(2);
+        medianFinder.addNum(3);
         System.out.println(medianFinder.findMedian());
     }
+
+    /**
+     * 此问题的难点在于如何平衡这两棵树
+     */
     PriorityQueue<Integer> minHeap = new PriorityQueue<>();
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
 
@@ -42,35 +46,19 @@ public class MedianFinder {
     }
 
     public void addNum(int num) {
-        //先往maxHeap加，加进去之后再把maxHeap中最大的元素加到minHeap中
-        //这样累加完之后，maxHeap中的元素数量总是要大于等于minHeap的
+
+        //先将num直接加入maxHeap,这样maxHeap中就多了一个元素，我们需要平衡，所以把maxHeap的栈顶元素吐出
+        //给minHeap,这样做一方面可以保持平衡，另一方面可以保证minHeap中总能取到较大值
         maxHeap.offer(num);
         minHeap.offer(maxHeap.poll());
+
+        //在上一步操作做完后，MinHeap中有可能保存了更多的元素，需要把MinHeap中的较小元素，平衡给MaxHeap
         if(maxHeap.size()<minHeap.size()) {
             maxHeap.offer(minHeap.poll());
         }
-        /*if(minHeap.size() <= maxHeap.size()) {
-            if(!maxHeap.isEmpty() &&  maxHeap.peek() > num) {
-                minHeap.offer(maxHeap.poll());
-                maxHeap.offer(num);
-            }else {
-                minHeap.offer(num);
-            }
-        }else {
-            if(!minHeap.isEmpty() && minHeap.peek() < num) {
-                maxHeap.offer(minHeap.poll());
-                minHeap.offer(num);
-            }else {
-                maxHeap.offer(num);
-            }
-        }*/
     }
 
     public double findMedian() {
-       /* if(minHeap.size() == maxHeap.size()) {
-            return (minHeap.peek()+maxHeap.peek())/2.0;
-        }
-        return minHeap.size() > maxHeap.size() ? minHeap.peek() : maxHeap.peek();*/
        return minHeap.size() != maxHeap.size() ? maxHeap.peek() :(minHeap.peek()+maxHeap.peek())/2.0;
     }
 }
