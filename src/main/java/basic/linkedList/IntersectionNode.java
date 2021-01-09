@@ -1,7 +1,15 @@
 package basic.linkedList;
 
 /**
- * 注意题目要求，如果题目没假设链表无环，则一定要做链表是否有环的判断，否则下面的两种解法在链表有环时都可能出现死循环
+ * leetcode160
+ * https://leetcode.com/problems/intersection-of-two-linked-lists/
+ * 学一个程序，找出两个单链表开始相交的节点
+ * example:
+ * Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
+ * Output: Reference of the node with value = 8
+ *
+ * 注意:
+ * 如果题目没假设链表无环，则一定要做链表是否有环的判断，否则下面的两种解法在链表有环时都可能出现死循环
  */
 public class IntersectionNode {
     /**

@@ -49,14 +49,16 @@ public class RevertLinkedList {
     public static ListNode reverseKGroup(ListNode head, int k) {
         int count = 0;
         ListNode cur = head;
+        //使用++count判断，从第一个元素算起，刚好到第k个元素
         while (cur != null && ++count != k) {
             cur = cur.next;
         }
-        //不足K个，直接返回
+        //不足K个，直接返回，不能使用count<k来当做终止条件，此时可能刚好count==k
         if (cur == null) return head;
         //递归下一组
         cur = reverseKGroup(cur.next, k);
-        while (k-- > 0) {
+
+        while (--k >= 0) { //等同于 for (int i=0;i<k;i++)
             //调整指针指向
             ListNode next = head.next;
             head.next = cur;

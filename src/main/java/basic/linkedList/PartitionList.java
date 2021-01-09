@@ -1,6 +1,8 @@
 package basic.linkedList;
 
 /**
+ * leetcode86  Partition List  Medium
+ * https://leetcode.com/problems/partition-list/
  * 给定一个链表和一个值x，对此链表节点进行排序，保证小于x的节点都在前面，大于x的节点都在后面。
  */
 public class PartitionList {
