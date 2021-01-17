@@ -47,6 +47,7 @@ public class LongestValidParentheses {
     }
 
     /**
+     * 解法2
      * 使用两个变量left和right，分别记录左括号和右括号的数量，遍历字符穿
      * 如果左右括号数量相等，则更新最大数量
      * 如果右括号数量大于左括号，如())，则重新开始计数

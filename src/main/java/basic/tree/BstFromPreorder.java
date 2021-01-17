@@ -43,4 +43,24 @@ public class BstFromPreorder {
         root.right=solution(preOrder,val,maxValue);
         return root;
     }
+
+    /**
+     * 解法2，分别找到左子区间和右子区间，递归
+     * @param preorder
+     * @return
+     */
+    public TreeNode bstFromPreorder(int[] preorder) {
+        return bstFromPreOrder(preorder,0,preorder.length);
+    }
+    //左闭右开区间
+    public TreeNode bstFromPreOrder(int[] preorder, int start, int end) {
+        if(start >= end) return null;
+        int i=start+1;
+        //找到第一个大于根节点的下标，也就是右子树的起点
+        for(;i<end && preorder[i]<preorder[start];i++);
+        TreeNode root = new TreeNode(preorder[start]);
+        root.left = bstFromPreOrder(preorder,start+1,i);
+        root.right = bstFromPreOrder(preorder,i,end);
+        return root;
+    }
 }

@@ -30,6 +30,17 @@ import java.util.List;
  * Output: [[1,7]]
  */
 public class InsertIntervals {
+    /**
+     * 将要插入的区间称为新区间
+     * 解法：将原始区间划分为三块，与新区间无交集的区间，与新区间有交集的区间，与新区间无交集的区间。
+     * 对于与新区间无交集的区间，直接加入到结果集合中即可
+     * 对于与新区间有交集的区间，需要找出融合后的左下标和右下标
+     * 判断一个集合和新区间有交集的方法：interval[1] >= newInterval[0] && interval[0]<=newInterval[1];
+     *
+     * @param intervals
+     * @param newInterval
+     * @return
+     */
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> ans =new ArrayList<>();
         int i = 0;

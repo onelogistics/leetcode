@@ -26,6 +26,15 @@ public class IntervalListIntersection {
         intervalListIntersection.intervalIntersection(new int[][]{{8,15}},new int[][]{{2,6},{8,10},{12,20}});
 
     }
+
+    /**
+     * 时间复杂度O(M+N)
+     * 解法：同时遍历A和B，左下标取两者中较大的下标，右下标取两者中较小的下标，即得到交集区间
+     * 根据两个区间右下标的大小，决定要移动那个集合的指针
+     * @param A
+     * @param B
+     * @return
+     */
     public int[][] intervalIntersection(int[][] A, int[][] B) {
         List<int[]> ans = new ArrayList<>();
         int i = 0, j = 0;

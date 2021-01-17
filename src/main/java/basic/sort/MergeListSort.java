@@ -3,7 +3,7 @@ package basic.sort;
 import basic.linkedList.ListNode;
 
 /**
- * 链表的归并排序
+ * 使用归并排序的思想 对链表进行排序
  */
 public class MergeListSort {
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class MergeListSort {
         ListNode fast=head;
         ListNode slow=head;
         //链表长度小于2不进入循环
-        while (fast!=null && fast.next!=null && fast.next.next!=null) {
+        while (fast.next != null && fast.next.next != null) {
             fast=fast.next.next;
             slow=slow.next;
         }

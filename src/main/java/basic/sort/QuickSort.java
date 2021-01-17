@@ -2,6 +2,10 @@ package basic.sort;
 
 import java.util.Arrays;
 
+/**
+ * 快排比其他两个O(NlogN)的算法（归并和堆）快的原因:
+ * cpu cache局部性原理，快排每次比较的都是相邻的元素
+ */
 public class QuickSort {
     public static void main(String[] args) {
         int[] a={2,3,5,1,4,1,4,6};

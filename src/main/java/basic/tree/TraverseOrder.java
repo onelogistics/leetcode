@@ -59,11 +59,12 @@ public class TraverseOrder {
         List<Integer> ans = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.empty()) {
-            //一直找到最左子节点
+            //dfs,将所有左节点压栈，然后依次pop出来，达到回溯的效果
             while (root != null) {
                 stack.add(root);
                 root = root.left;
             }
+            //去除最左的叶子节点
             root = stack.pop();
             ans.add(root.val);
             //把右子树放到栈中

@@ -2,14 +2,19 @@ package basic.sort;
 
 import utils.ArrayUtils;
 
+import java.util.Arrays;
+
 /**
  * @author JunjunYang
  * @date 2019/9/23 15:20
  */
 public class HeapSort {
-    private int capacity;
-    private int size;
-    private int[] array;
+    public static void main(String[] args) {
+        HeapSort heapSort = new HeapSort();
+        int[] array = new int[]{3,4,2,5,1,6};
+        heapSort.sort(array);
+        System.out.println(Arrays.toString(array));
+    }
 
     /**
      * Time complexity:建堆O(N)+调整O(NlogN)
@@ -31,7 +36,7 @@ public class HeapSort {
     }
 
     /**
-     * 自上而下调整
+     * 自上而下调整，构建最大堆
      *
      * @param array
      * @param i      当前需要调整的节点下标
@@ -56,32 +61,4 @@ public class HeapSort {
         array[i] = temp;
     }
 
-    /**
-     * 删除堆顶元素
-     */
-    public void remove() {
-        ArrayUtils.swap(array, 0, size - 1);
-        size--;
-        adjustHeap(array, 0, size);
-    }
-
-    /**
-     * 末尾插入元素,父节点是(i-1)/2
-     *
-     * @param value
-     */
-    public void insert(int value) {
-        array[size] = value;
-        int i = size;
-        size++;
-        while (i > 0) {
-            int parentIdx = (i - 1) / 2;
-            if (array[parentIdx] < array[i]) {
-                ArrayUtils.swap(array, parentIdx, i);
-            } else {
-                break;
-            }
-            i = parentIdx;
-        }
-    }
 }

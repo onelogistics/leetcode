@@ -1,74 +1,49 @@
 package basic.sort;
 
-import java.util.Arrays;
 
-/**
- * 主体思想：建立一个临时数组，不断分而治之，直到left=right,然后开始merge
- *
+/**主体思想：建立一个临时数组，不断分而治之，直到left=right,然后开始merge
+ * time complexity:O(NlogN)
+ * space complexity:O(N)
+ * stable:true
  */
 public class MergeSort {
-    public static void main(String[] args) {
-        int[] a = {2, 3, 5, 1, 4, 1, 4, 6};
-        new MergeSort().sort(a);
-        System.out.println(Arrays.toString(a));
-    }
-    /**
-     * time complexity:O(NlogN)
-     * space complexity:O(N)
-     * stable:true
-     * @param array
-     */
-    public void sort(int[] array) {
-        //notice 提前创建临时数组来存储merge后的数据，避免迭代/递归过程中频繁开辟空间
-        int[] temp = new int[array.length];
-        sort(array, 0, array.length - 1, temp);
+    public int[] sortArray(int[] nums) {
+        int[] temp = new int[nums.length];
+        sort(nums, temp, 0, nums.length - 1);
+        return nums;
     }
 
-    /**
-     * 不断分组，直到left=right，然后递归合并
-     * @param array
-     * @param left
-     * @param right
-     * @param temp
-     */
-    public void sort(int[] array, int left, int right, int[] temp) {
+    //分治，拆分到最细粒度
+    public void sort(int[] nums, int[] temp, int left, int right) {
         if (left < right) {
-            int mid = (left + right) / 2;
-            sort(array, left, mid, temp);
-            sort(array, mid + 1, right, temp);
-            merge(array, left, mid, right, temp);
+            //避免溢出
+            int mid = left + (right - left) / 2;
+            sort(nums, temp, left, mid);
+            sort(nums, temp, mid + 1, right);
+            merge(nums, temp, left, mid, right);
         }
     }
 
-    /**
-     * 合并两个有序数组，不断比较两个数组的头指针，将较小的一个放到临时数组中，同时不断移动数组指针
-     * @param array
-     * @param left
-     * @param mid
-     * @param right
-     * @param temp
-     */
-    public void merge(int[] array, int left, int mid, int right, int[] temp) {
-        //左序列指针
+    //合并两个有序数组
+    public void merge(int[] nums, int[] temp, int left, int mid, int right) {
         int i = left;
-        //右序列指针
         int j = mid + 1;
-        //临时序列指针
-        int t = 0;
+        int k = 0;
         while (i <= mid && j <= right) {
-            if (array[i] <= array[j])
-                temp[t++] = array[i++];
-            else
-                temp[t++] = array[j++];
+            if (nums[i] < nums[j]) {
+                temp[k++] = nums[i++];
+            } else {
+                temp[k++] = nums[j++];
+            }
         }
-        //序列剩余元素填充
-        while (i <= mid)
-            temp[t++] = array[i++];
-        while (j <= right)
-            temp[t++] = array[j++];
-        //将临时数组的元素拷贝到array中
-        t = 0;
-        while (left <= right)
-            array[left++] = temp[t++];
+        while (i <= mid) {
+            temp[k++] = nums[i++];
+        }
+        while (j <= right) {
+            temp[k++] = nums[j++];
+        }
+        for (i = 0; i < k; i++) {
+            nums[left++] = temp[i];
+        }
     }
 }
