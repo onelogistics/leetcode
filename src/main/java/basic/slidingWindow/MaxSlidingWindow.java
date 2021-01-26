@@ -1,5 +1,6 @@
 package basic.slidingWindow;
 
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -25,6 +26,11 @@ import java.util.LinkedList;
  *  1  3  -1  -3  5 [3  6  7]      7
  */
 public class MaxSlidingWindow {
+    static MaxSlidingWindow main = new MaxSlidingWindow();
+    public static void main(String[] args) {
+        int[] ans=main.maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7},3);
+        System.out.println(Arrays.toString(ans));
+    }
     /**
      * 解法：此题用最大堆来解的话，复杂度会超时，因此用双端队列来解
      * 双端队列存储数组下标，队列头至队列尾，是严格的递减关系，逐步遍历数组，如果当前遍历到的元素大于
@@ -41,13 +47,17 @@ public class MaxSlidingWindow {
         int[] result = new int[nums.length-k+1];
         Deque<Integer> deque = new LinkedList<>();
         for (int i = 0; i < nums.length; i++) {
+            //淘汰末尾较小的元素
             while (!deque.isEmpty() && nums[deque.getLast()] < nums[i]) {
                 deque.removeLast();
             }
+            //将当前元素加入到序列中来
             deque.addLast(i);
+            //淘汰超出滑动窗口的元素
             if(deque.getFirst() == i-k) {
                 deque.removeFirst();
             }
+            //赋值
             if(i >= k-1) {
                 result[i-k+1] = nums[deque.getFirst()];
             }

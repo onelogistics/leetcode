@@ -25,14 +25,13 @@
 - 滑动窗口
     -  [P0:最大子数组之和为K](src/main/java/basic/slidingWindow/MaxSubArrayLenEqualsK.java)
     -  [leetcode239: 返回滑动窗口最大值序列](src/main/java/basic/slidingWindow/MaxSlidingWindow.java)
+    -  [leetcode480 hard 求滑动窗口的中值序列](src/main/java/basic/slidingWindow/MedianSlidingWindow.java)
     -  [leetcode340 最多有K个不同字符的最长子串](src/main/java/basic/slidingWindow/LengthOfLongestSubstringKDistinct.java)
     -  [leetcode904 Fruit Into Baskets](src/main/java/basic/slidingWindow/TotalFruit.java)
-    -  [leetcode3 最长不重复子串的长度](src/main/java/basic/dynamic/LengthOfLongestSubstring.java)
-    -  [leetcode424 Fruit Into Baskets](src/main/java/basic/slidingWindow/CharacterReplacement.java)
+    -  [leetcode424 替换k次之后的最长重复子串](src/main/java/basic/slidingWindow/CharacterReplacement.java)
     -  [leetcode438 medium 寻找同位异构词的下标](src/main/java/basic/slidingWindow/FindAnagrams.java)
     -  [leetcode713 medium 元素之积小于K的连续子数组个数](src/main/java/basic/slidingWindow/NumSubArrayProductLessThanK.java)
     -  [leetcode992 hard 有K个不重复元素的子数组个数](src/main/java/basic/slidingWindow/SubarraysWithKDistinct.java)
-    -  [leetcode480 hard 求滑动窗口的中值](src/main/java/basic/slidingWindow/MedianSlidingWindow.java)
     -  [leetcode219 easy 相邻重复元素的距离差不大于K](src/main/java/basic/slidingWindow/ContainsNearbyDuplicate.java)
      - [leetcode3 最长不重复子串的长度](src/main/java/basic/slidingWindow/LengthOfLongestSubstring.java)
 - 双指针
@@ -59,8 +58,8 @@
 - 贪心算法
     - [leetcode321 生成最大的数](src/main/java/basic/greedy/CreateMaxNumber.java)
     - [leetcode134 加油站](src/main/java/basic/greedy/GasStation.java)
-    - [leetcode55 跳跃游戏](src/main/java/basic/greedy/JumpGame.java)
-    - [leetcode45 跳跃游戏2](src/main/java/basic/greedy/JumpGame2.java)    
+    - [leetcode55 跳跃游戏:是否能跳到终点](src/main/java/basic/greedy/JumpGame.java)
+    - [leetcode45 跳跃游戏:跳到终点所需的最小步数](src/main/java/basic/greedy/JumpGame2.java)    
 - 堆栈
     - [带最小值方法的栈](src/main/java/basic/QueueAndStack/MinStack.java)
     - [用栈实现队列](src/main/java/basic/QueueAndStack/MyQueue.java)
@@ -95,6 +94,7 @@
     -  [leetcode57 medium 插入有序区间](src/main/java/basic/mergeIntervals/InsertIntervals.java)
     -  [leetcode986 medium 两个区间列表中交叉的区间](src/main/java/basic/mergeIntervals/IntervalListIntersection.java)
     -  [leetcode715 Hard 设计一个区间模块类](src/main/java/basic/mergeIntervals/RangeModule.java)
+    
 - 循环排序: 用来处理数组中的数值限定在一定区间内的问题，典型的如寻找丢失数
     - [P0:leetcode42 第一个缺失的正整数](src/main/java/basic/cyclicSort/FirstMissingPositive.java)
     - [leetcode268 缺失的数字](src/main/java/basic/cyclicSort/MissingNumber.java)

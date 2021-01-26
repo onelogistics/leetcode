@@ -49,18 +49,18 @@ public class BstFromPreorder {
      * @param preorder
      * @return
      */
-    public TreeNode bstFromPreorder(int[] preorder) {
-        return bstFromPreOrder(preorder,0,preorder.length);
+    public TreeNode bstFromPreOrder(int[] preOrder) {
+        return bstFromPreOrder(preOrder,0,preOrder.length);
     }
     //左闭右开区间
-    public TreeNode bstFromPreOrder(int[] preorder, int start, int end) {
+    public TreeNode bstFromPreOrder(int[] preOrder, int start, int end) {
         if(start >= end) return null;
         int i=start+1;
         //找到第一个大于根节点的下标，也就是右子树的起点
-        for(;i<end && preorder[i]<preorder[start];i++);
-        TreeNode root = new TreeNode(preorder[start]);
-        root.left = bstFromPreOrder(preorder,start+1,i);
-        root.right = bstFromPreOrder(preorder,i,end);
+        for(;i<end && preOrder[i]<preOrder[start];i++);
+        TreeNode root = new TreeNode(preOrder[start]);
+        root.left = bstFromPreOrder(preOrder,start+1,i);
+        root.right = bstFromPreOrder(preOrder,i,end);
         return root;
     }
 }

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-/**二分查找的几个常见难点：右下标的初始化值，循环判断条件的确定，left和right指针的下一次迭代值，‘
+/**二分查找的几个常见难点：右下标的初始化值，循环判断条件的确定，left和right指针的下一次迭代值，
  * 目前有两种常见求目标值的做法：
  *
  * 1、right初始化为nums.length,此时我们搜索的是一个左闭右开区间[left，right)，因此我们的循环判断条件时
