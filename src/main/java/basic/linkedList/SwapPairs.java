@@ -9,6 +9,7 @@ public class SwapPairs {
     public static void main(String[] args) {
         ListNode.println(swapPairs(ListNode.getListNodes(1, 2, 3, 4, 5, 6, 7)));
     }
+
     public ListNode swapPairsRecursion(ListNode head) {
         if(head == null || head.next == null) return head;
         //第二个节点设为头结点

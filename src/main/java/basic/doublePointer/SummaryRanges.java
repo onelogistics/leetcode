@@ -48,8 +48,30 @@ import java.util.List;
 public class SummaryRanges {
     public static void main(String[] args) {
         SummaryRanges summaryRanges=new SummaryRanges();
-        summaryRanges.summaryRanges(new int[]{0,1,2,4,5,7});
+        System.out.println(summaryRanges.summaryRanges(new int[]{0, 1, 2, 4, 5, 7}));
     }
+    /**
+     * 解法2，使用单指针，不断右移指针，直到不满足移动条件为止
+     * @param nums
+     * @return
+     */
+    public List<String> summaryRanges(int[] nums) {
+        if (nums.length == 1) return Arrays.asList(String.valueOf(nums[0]));
+        List<String> ans = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            int head = nums[i];
+            while (i + 1 < nums.length && nums[i+1] - nums[i] == 1) {
+                i++;
+            }
+            if (head != nums[i]) {
+                ans.add(head + "->" + nums[i]);
+            } else {
+                ans.add(head + "");
+            }
+        }
+        return ans;
+    }
+
     /**
      * 解题思路1
      * 两个指针，一个指向范围的头，一个指向范围的尾
@@ -84,25 +106,4 @@ public class SummaryRanges {
         return ans;
     }
 
-    /**
-     * 解法2，使用单指针，不断右移指针，直到不满足移动条件为止
-     * @param nums
-     * @return
-     */
-    public List<String> summaryRanges(int[] nums) {
-        if (nums.length == 1) return Arrays.asList(String.valueOf(nums[0]));
-        List<String> ans = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++) {
-            int head = nums[i];
-            while (i + 1 < nums.length && nums[i+1] - nums[i] == 1) {
-                i++;
-            }
-            if (head != nums[i]) {
-                ans.add(head + "->" + nums[i]);
-            } else {
-                ans.add(head + "");
-            }
-        }
-        return ans;
-    }
 }

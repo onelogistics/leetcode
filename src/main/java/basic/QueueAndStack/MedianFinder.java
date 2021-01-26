@@ -1,6 +1,4 @@
-package basic.heap;
-
-import com.sun.org.apache.regexp.internal.RE;
+package basic.QueueAndStack;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

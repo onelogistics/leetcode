@@ -32,6 +32,11 @@ public class IsBalanced {
         return maxDepth2(root) != -1;
     }
 
+    /**
+     * 用特殊值标明了高度差超过1的情况
+     * @param root
+     * @return
+     */
     public int maxDepth2(TreeNode root) {
         if (root == null) {
             return 0;

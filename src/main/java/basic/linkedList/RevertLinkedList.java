@@ -1,5 +1,7 @@
 package basic.linkedList;
 
+import java.util.Scanner;
+
 /**
  * 反转指定范围内的列表
  *

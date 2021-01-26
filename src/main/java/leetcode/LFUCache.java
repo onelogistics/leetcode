@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.Map;
 
 /**
- * 460
- * Least Frequently Used
+ * LFU的五种实现方案 ： https://www.cnblogs.com/starry-skys/p/12651282.html
+ * 460 Least Frequently Used
  * 请你为 最不经常使用（LFU）缓存算法设计并实现数据结构。
  * <p>
  * 实现 LFUCache 类：

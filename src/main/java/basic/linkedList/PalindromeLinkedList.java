@@ -30,6 +30,11 @@ public class PalindromeLinkedList {
         //slowPoint指向链表后半部分的头
         ListNode slowPoint = head;
         ListNode quickPoint = head;
+        //注意这个地方寻找中点的方法
+        //1-2  循环结束后，slow=2,quick=0
+        //1-2-1  循环结束后， slow=1, quick=1;
+        //1-2-3-1, 循环结束后，slow=3,quick=0;
+        //这样循环结束后，slow总是指向较少的后半部分
         while (quickPoint != null) {
             if (quickPoint.next == null) {
                 slowPoint = slowPoint.next;
@@ -47,7 +52,7 @@ public class PalindromeLinkedList {
             behindPre = behindCur;
             behindCur = next;
         }
-        //behindPre是后半部分长度较小的部分，因此只用比较behind是否为null即可
+        //behindPre是后半部分长度较小的部分，因此只用比较behindPre否为null即可
         while (behindPre != null) {
             if (behindPre.val != head.val) {
                 return false;

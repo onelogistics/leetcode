@@ -17,6 +17,7 @@ public class FindMedianSortedArrays {
     public double solution(int[] nums1,int[] nums2) {
         int m=nums1.length;
         int n=nums2.length;
+        //如果m+n是偶数，l和r分别是最中心的两个下标，如果m+n是奇数，l等于r
         int l=(m+n+1)/2;
         int r=(m+n+2)/2;
         System.out.println(getKth(nums1, 0, nums2, 0, l));
@@ -44,6 +45,7 @@ public class FindMedianSortedArrays {
         int nums2Mid=start2+k/2-1<nums2.length?nums2[start2+k/2-1]:Integer.MAX_VALUE;
         //如果数组1的中位数较小，则淘汰掉较小的这部分数据，
         if(nums1Mid<nums2Mid) {
+            //已经排除了较小的这部分元素，所以我们要找的就是第k-k/2大的元素了
             return getKth(nums1,start1+k/2,nums2,start2,k-k/2);
         }else {
             return getKth(nums1,start1,nums2,start2+k/2,k-k/2);
