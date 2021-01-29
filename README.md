@@ -23,7 +23,7 @@
     -  [P0:二叉树遍历](src/main/java/basic/tree/TraverseOrder.java)
     - [leetcode257 二叉树路径问题](src/main/java/basic/tree/BinaryTreePaths.java)  
 - 滑动窗口
-    -  [P0:最大子数组之和为K](src/main/java/basic/slidingWindow/MaxSubArrayLenEqualsK.java)
+    -  [P0:求和为K的子数组的最大长度](src/main/java/basic/slidingWindow/MaxSubArrayLenEqualsK.java)
     -  [leetcode239: 返回滑动窗口最大值序列](src/main/java/basic/slidingWindow/MaxSlidingWindow.java)
     -  [leetcode480 hard 求滑动窗口的中值序列](src/main/java/basic/slidingWindow/MedianSlidingWindow.java)
     -  [leetcode340 最多有K个不同字符的最长子串](src/main/java/basic/slidingWindow/LengthOfLongestSubstringKDistinct.java)
@@ -96,8 +96,8 @@
     -  [leetcode715 Hard 设计一个区间模块类](src/main/java/basic/mergeIntervals/RangeModule.java)
     
 - 循环排序: 用来处理数组中的数值限定在一定区间内的问题，典型的如寻找丢失数
-    - [P0:leetcode42 第一个缺失的正整数](src/main/java/basic/cyclicSort/FirstMissingPositive.java)
     - [leetcode268 缺失的数字](src/main/java/basic/cyclicSort/MissingNumber.java)
+    - [P0:leetcode42 第一个缺失的正整数](src/main/java/basic/cyclicSort/FirstMissingPositive.java)
     - [leetcode448 求所有缺失的数字](src/main/java/basic/cyclicSort/FindDisappearedNumbers.java)
     - [leetcode287 寻找重复元素](src/main/java/basic/cyclicSort/FindDuplicateNumber.java)
 - leetcode   

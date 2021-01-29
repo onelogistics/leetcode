@@ -3,7 +3,8 @@ package basic.slidingWindow;
 import java.util.HashMap;
 import java.util.Map;
 
-/**https://www.cnblogs.com/grandyang/p/5351347.html
+/**leetcode 340
+ * https://www.cnblogs.com/grandyang/p/5351347.html
  * 输入一个string数组和一个指定值K，找出最多有k个不同字符的最长子串
  *Example 1:
  *
@@ -17,8 +18,11 @@ import java.util.Map;
  * Explanation: T is "aa" which its length is 2.
  */
 public class LengthOfLongestSubstringKDistinct {
-    public static void main(String[] args) {
 
+    static LengthOfLongestSubstringKDistinct main = new LengthOfLongestSubstringKDistinct();
+
+    public static void main(String[] args) {
+        System.out.println(main.solutionUseMapByIndex("eceba", 2));
     }
     /**
      * 基本思路：使用map存储每个字符及其出现的次数，使用指针left指向子串最左边的位置
@@ -71,8 +75,9 @@ public class LengthOfLongestSubstringKDistinct {
                     map.remove(s.charAt(left));
                 }
                 left++;
-                result=Math.max(result,i-left+1);
+
             }
+            result=Math.max(result,i-left+1);
         }
         return result;
     }
