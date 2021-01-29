@@ -57,7 +57,7 @@ public class BackPack {
      *
      * @param w 物品的体积数组
      * @param v 物品的价值数组
-     * @param K 背包的价值
+     * @param K 背包的容量
      * @return
      */
     public static int backPack01(int[] w, int[] v, int K) {
